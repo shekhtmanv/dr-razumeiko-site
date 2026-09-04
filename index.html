@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Др. Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
+    <meta name="description" content="Прийом лікаря-онкодерматолога Катерини Разумейко у Києві. Цифрова дерматоскопія, діагностика та видалення новоутворень шкіри (просп. Любомира Гузара, 3).">
+    
+    <!-- Open Graph for Social Networks -->
+    <meta property="og:title" content="Др. Катерина Разумейко | Онкодерматолог, Дерматохірург">
+    <meta property="og:description" content="Рання діагностика та висічення утворень шкіри. Професійно, безпечно, відповідно до міжнародних протоколів.">
+    <meta property="og:url" content="https://dr-razumeiko.com">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data (Schema.org) for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Др. Катерина Разумейко",
+      "medicalSpecialty": ["Dermatology", "Oncology"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "проспект Любомира Гузара, 3, корпус 4",
+        "addressLocality": "Київ",
+        "addressCountry": "UA"
+      },
+      "url": "https://dr-razumeiko.com"
+    }
+    </script>
+
+    <!-- Google Tag Manager / GA4 / Meta Pixel Placeholders -->
+    <!-- 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> 
+    -->
+
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --text-color: #2d3748;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-cta {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-cta:hover {
+            background: var(--primary-color);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+        }
+
+        .services {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .service-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .spa-page {
+            display: none;
+        }
+
+        .spa-page.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo" data-link>Др. Катерина Разумейко</a>
+            <ul class="nav-links">
+                <li><a href="/" data-link>Головна</a></li>
+                <li><a href="/about" data-link>Про лікаря</a></li>
+                <li><a href="/services" data-link>Напрямки прийому</a></li>
+                <li><a href="/blog" data-link>Блог</a></li>
+                <li><a href="/contacts" data-link>Контакти</a></li>
+            </ul>
+            <a href="https://t.me/dr_razumeiko" target="_blank" class="btn-cta">Записатися на прийом</a>
+        </div>
+    </header>
+
+    <main id="app">
+        <!-- Головна сторінка -->
+        <section id="home-view" class="spa-page active">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Онкодерматологія та Дерматохірургія у Києві</h1>
+                    <p>Консультативно-діагностичний прийом лікаря-онкодерматолога Катерини Разумейко. Цифрова дерматоскопія новоутворень шкіри та хірургічне лікування за міжнародними стандартами.</p>
+                    <a href="https://t.me/dr_razumeiko" target="_blank" class="btn-cta">Записатися через Telegram</a>
+                </div>
+                <div class="hero-image">
+                    <img src="portrait.jpg" alt="Лікар-онкодерматолог Катерина Разумейко">
+                </div>
+            </div>
+
+            <div class="services">
+                <div class="container">
+                    <h2 class="section-title">Спеціалізація та Послуги</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3>Цифрова Дерматоскопія</h3>
+                            <p>Огляд родимок та утворень під збільшенням для раннього виявлення ознак злоякісних процесів.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Видалення Новоутворень</h3>
+                            <p>Радіохвильове та хірургічне висічення родимок, папілом, кератом з обов'язковим гістологічним дослідженням.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Онкохірургія Шкіри</h3>
+                            <p>Планове хірургічне лікування пухлин шкіри з дотриманням онкологічних принципів та накладанням естетичного шва.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Про лікаря -->
+        <section id="about-view" class="spa-page">
+            <div class="container" style="padding: 4rem 2rem;">
+                <h1 class="section-title">Про лікаря</h1>
+                <p>Катерина Разумейко — лікар-онкодерматолог, дерматохірург. Член Європейської асоціації дерматовенерологів (EADV) та Міжнародного товариства дерматоскопії (IDS).</p>
+            </div>
+        </section>
+
+        <!-- Напрямки прийому -->
+        <section id="services-view" class="spa-page">
+            <div class="container" style="padding: 4rem 2rem;">
+                <h1 class="section-title">Консультативно-діагностичний прийом</h1>
+                <p>Прийом здійснюється за попереднім записом. Для узгодження часу та дат консультацій скористайтеся контактами або месенджером.</p>
+            </div>
+        </section>
+
+        <!-- Блог -->
+        <section id="blog-view" class="spa-page">
+            <div class="container" style="padding: 4rem 2rem;">
+                <h1 class="section-title">Матеріали та Публікації</h1>
+                <p>Розділ з інформаційними статтями про профілактику та ранню діагностику захворювань шкіри.</p>
+            </div>
+        </section>
+
+        <!-- Контакти -->
+        <section id="contacts-view" class="spa-page">
+            <div class="container" style="padding: 4rem 2rem;">
+                <h1 class="section-title">Місце прийому та Контакти</h1>
+                <p><strong>Адреса:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
+                <p><strong>Графік прийому:</strong> Пн–Пт: 09:00 – 14:00 (за попереднім записом)</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const routes = {
+            '/': 'home-view',
+            '/about': 'about-view',
+            '/services': 'services-view',
+            '/blog': 'blog-view',
+            '/contacts': 'contacts-view'
+        };
+
+        function navigate(path) {
+            window.history.pushState({}, "", path);
+            renderPage(path);
+        }
+
+        function renderPage(path) {
+            const viewId = routes[path] || 'home-view';
+            document.querySelectorAll('.spa-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            const activePage = document.getElementById(viewId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+            window.scrollTo(0, 0);
+        }
+
+        document.addEventListener("click", e => {
+            if (e.target.matches("[data-link]")) {
+                e.preventDefault();
+                navigate(e.target.getAttribute("href"));
+            }
+        });
+
+        window.addEventListener("popstate", () => {
+            renderPage(window.location.pathname);
+        });
+
+        renderPage(window.location.pathname);
+    </script>
+</body>
+</html>
