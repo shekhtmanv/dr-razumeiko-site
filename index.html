@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Др. Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
-    <meta name="description" content="Прийом лікаря-онкодерматолога Катерини Разумейко у Києві. Цифрова дерматоскопія, діагностика та видалення новоутворень шкіри (просп. Любомира Гузара, 3).">
+    <meta name="description" content="Прийом лікаря-онкодерматолога Катерини Разумейко у Києві. Цифрова дерматоскопія, рання діагностика та видалення новоутворень шкіри (просп. Любомира Гузара, 3).">
     
-    <!-- Open Graph for Social Networks -->
     <meta property="og:title" content="Др. Катерина Разумейко | Онкодерматолог, Дерматохірург">
     <meta property="og:description" content="Рання діагностика та висічення утворень шкіри. Професійно, безпечно, відповідно до міжнародних протоколів.">
     <meta property="og:url" content="https://dr-razumeiko.com">
     <meta property="og:type" content="website">
 
-    <!-- Structured Data (Schema.org) for Local SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,15 +27,6 @@
     }
     </script>
 
-    <!-- Google Tag Manager / GA4 / Meta Pixel Placeholders -->
-    <!-- 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> 
-    -->
-
     <style>
         :root {
             --primary-color: #1a365d;
@@ -45,6 +34,7 @@
             --text-color: #2d3748;
             --bg-light: #f7fafc;
             --white: #ffffff;
+            --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -110,6 +100,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s;
+            display: inline-block;
         }
 
         .btn-cta:hover {
@@ -141,14 +132,18 @@
 
         .hero-image img {
             width: 100%;
+            height: auto;
             border-radius: 12px;
             box-shadow: var(--shadow);
             object-fit: cover;
         }
 
-        .services {
-            background: var(--bg-light);
+        .section {
             padding: 4rem 2rem;
+        }
+
+        .bg-light {
+            background: var(--bg-light);
         }
 
         .container {
@@ -174,11 +169,40 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
         }
 
         .service-card h3 {
             color: var(--accent-color);
             margin-bottom: 0.75rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
 
         .spa-page {
@@ -187,6 +211,14 @@
 
         .spa-page.active {
             display: block;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
         }
 
         @media (max-width: 768px) {
@@ -211,6 +243,7 @@
                 <li><a href="/" data-link>Головна</a></li>
                 <li><a href="/about" data-link>Про лікаря</a></li>
                 <li><a href="/services" data-link>Напрямки прийому</a></li>
+                <li><a href="/faq" data-link>Часті питання</a></li>
                 <li><a href="/blog" data-link>Блог</a></li>
                 <li><a href="/contacts" data-link>Контакти</a></li>
             </ul>
@@ -219,12 +252,12 @@
     </header>
 
     <main id="app">
-        <!-- Головна сторінка -->
+        <!-- Головна -->
         <section id="home-view" class="spa-page active">
             <div class="hero">
                 <div class="hero-text">
                     <h1>Онкодерматологія та Дерматохірургія у Києві</h1>
-                    <p>Консультативно-діагностичний прийом лікаря-онкодерматолога Катерини Разумейко. Цифрова дерматоскопія новоутворень шкіри та хірургічне лікування за міжнародними стандартами.</p>
+                    <p>Консультативно-діагностичний прийом лікаря-онкодерматолога Катерини Разумейко. Цифрова дерматоскопія, рання діагностика та видалення новоутворень шкіри відповідно до міжнародних протоколів.</p>
                     <a href="https://t.me/dr_razumeiko" target="_blank" class="btn-cta">Записатися через Telegram</a>
                 </div>
                 <div class="hero-image">
@@ -232,22 +265,33 @@
                 </div>
             </div>
 
-            <div class="services">
+            <div class="section bg-light">
                 <div class="container">
-                    <h2 class="section-title">Спеціалізація та Послуги</h2>
+                    <h2 class="section-title">Основні напрямки роботи</h2>
                     <div class="services-grid">
                         <div class="service-card">
                             <h3>Цифрова Дерматоскопія</h3>
-                            <p>Огляд родимок та утворень під збільшенням для раннього виявлення ознак злоякісних процесів.</p>
+                            <p>Детальна оцінка структури родимок та новоутворень шкіри під високим збільшенням для раннього виявлення ознак переродження.</p>
                         </div>
                         <div class="service-card">
-                            <h3>Видалення Новоутворень</h3>
+                            <h3>Видалення Утворень</h3>
                             <p>Радіохвильове та хірургічне висічення родимок, папілом, кератом з обов'язковим гістологічним дослідженням.</p>
                         </div>
                         <div class="service-card">
                             <h3>Онкохірургія Шкіри</h3>
-                            <p>Планове хірургічне лікування пухлин шкіри з дотриманням онкологічних принципів та накладанням естетичного шва.</p>
+                            <p>Планове хірургічне лікування злоякісних пухлин шкіри з дотриманням онкологічних меж та накладанням естетичних швів.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-title">Практична діяльність</h2>
+                    <div class="gallery-grid">
+                        <img src="operation_1.jpg" alt="Процес прийому та маніпуляцій">
+                        <img src="operation_2.jpg" alt="Дерматохірургічна процедура">
+                        <img src="operation_3.jpg" alt="Кабінет та обладнання">
                     </div>
                 </div>
             </div>
@@ -255,43 +299,90 @@
 
         <!-- Про лікаря -->
         <section id="about-view" class="spa-page">
-            <div class="container" style="padding: 4rem 2rem;">
+            <div class="container section">
                 <h1 class="section-title">Про лікаря</h1>
-                <p>Катерина Разумейко — лікар-онкодерматолог, дерматохірург. Член Європейської асоціації дерматовенерологів (EADV) та Міжнародного товариства дерматоскопії (IDS).</p>
+                <p style="margin-bottom: 1.5rem;"><strong>Катерина Разумейко</strong> — лікар-онкодерматолог, дерматохірург. Спеціалізується на ранній діагностиці новоутворень шкіри, дерматоскопії та хірургічному видаленні доброякісних і злоякісних утворень.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem;">Професійні спільноти:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Дійсний член Європейської асоціації дерматовенерологів (EADV)</li>
+                    <li>Член Міжнародного товариства дерматоскопії (IDS)</li>
+                </ul>
+
+                <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem;">Принципи роботи:</h3>
+                <p>Доказова медицина, дотримання міжнародних онкологічних протоколів, пріоритет безпеки пацієнта та досягнення максимального естетичного результату при висіченні утворень.</p>
             </div>
         </section>
 
         <!-- Напрямки прийому -->
         <section id="services-view" class="spa-page">
-            <div class="container" style="padding: 4rem 2rem;">
+            <div class="container section">
                 <h1 class="section-title">Консультативно-діагностичний прийом</h1>
-                <p>Прийом здійснюється за попереднім записом. Для узгодження часу та дат консультацій скористайтеся контактами або месенджером.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Консультація та Дерматоскопія</h3>
+                        <p>Повний огляд кожних покривів, картирування родимок, складання плану подальшого спостереження або видалення.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Малоінвазивне видалення</h3>
+                        <p>Видалення доброякісних елементів (папіломи, себорейні кератоми, ангіоми) за допомогою радіохвильового методу.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Хірургічне висічення</h3>
+                        <p>Видалення складних або підозрілих утворень з відправкою матеріалу на гістологічну верифікацію.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq-view" class="spa-page">
+            <div class="container section">
+                <h1 class="section-title">Часті питання (FAQ)</h1>
+                <div class="faq-item">
+                    <h3>Чи обов'язково відправляти утворення на гістологію?</h3>
+                    <p>Так. Будь-яке висічене утворення шкіри за міжнародними стандарту підлягає патогістологічному дослідженню для остаточного підтвердження діагнозу.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Чи залишаться шрами після видалення?</h3>
+                    <p>Метод видалення та техніка накладання швів підбираються так, щоб слід був мінімальним. Остаточний вигляд рубець приймає протягом 6–12 місяців.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Як підготуватися до дерматоскопії?</h3>
+                    <p>Особливої підготовки не потрібно. Бажано утриматися від нанесення тональних засобів або косметики на ділянки, які будуть оглядатися.</p>
+                </div>
             </div>
         </section>
 
         <!-- Блог -->
         <section id="blog-view" class="spa-page">
-            <div class="container" style="padding: 4rem 2rem;">
-                <h1 class="section-title">Матеріали та Публікації</h1>
-                <p>Розділ з інформаційними статтями про профілактику та ранню діагностику захворювань шкіри.</p>
+            <div class="container section">
+                <h1 class="section-title">Статті та публікації</h1>
+                <p style="text-align: center;">Розділ наповнюється корисними матеріалами про профілактику та діагностику шкірних захворювань.</p>
             </div>
         </section>
 
         <!-- Контакти -->
         <section id="contacts-view" class="spa-page">
-            <div class="container" style="padding: 4rem 2rem;">
-                <h1 class="section-title">Місце прийому та Контакти</h1>
+            <div class="container section">
+                <h1 class="section-title">Місце прийому та контакти</h1>
                 <p><strong>Адреса:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
                 <p><strong>Графік прийому:</strong> Пн–Пт: 09:00 – 14:00 (за попереднім записом)</p>
+                <p style="margin-top: 1rem;"><a href="https://t.me/dr_razumeiko" target="_blank" class="btn-cta">Записатися через Telegram</a></p>
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Др. Катерина Разумейко. Всі права захищено.</p>
+    </footer>
 
     <script>
         const routes = {
             '/': 'home-view',
             '/about': 'about-view',
             '/services': 'services-view',
+            '/faq': 'faq-view',
             '/blog': 'blog-view',
             '/contacts': 'contacts-view'
         };
