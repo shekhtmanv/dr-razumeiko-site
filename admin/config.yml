@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Статті блогу"
+    folder: "blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Заголовок статті", name: "title", widget: "string"}
+      - {label: "Дата публікації", name: "date", widget: "datetime"}
+      - {label: "Короткий опис (Seo description)", name: "description", widget: "text"}
+      - {label: "Обкладинка статті", name: "thumbnail", widget: "image", required: false}
+      - {label: "Текст статті", name: "body", widget: "markdown"}
