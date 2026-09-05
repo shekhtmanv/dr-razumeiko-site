@@ -50,7 +50,7 @@
             color: var(--text-color);
             line-height: 1.6;
             background-color: #fff;
-            padding-bottom: 75px;
+            padding-bottom: 0;
         }
 
         header {
@@ -301,29 +301,6 @@
             border: 0;
         }
 
-        .sticky-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-top: 1px solid var(--border-color);
-            padding: 0.6rem 1rem;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
-            z-index: 999;
-        }
-
-        .sticky-bottom-bar a {
-            flex: 1;
-            font-size: 0.95rem;
-            padding: 0.65rem 0.5rem;
-            text-align: center;
-        }
-
         .faq-item {
             background: var(--white);
             padding: 1.5rem;
@@ -388,7 +365,7 @@
             background: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 1.5rem 5rem 1.5rem;
+            padding: 2.5rem 1.5rem;
         }
 
         /* Мобільна адаптація */
@@ -813,18 +790,13 @@
         </section>
     </main>
 
-    <!-- Плаваюча кнопка зв'язку для мобільних -->
-    <div class="sticky-bottom-bar">
-        <a href="https://t.me/katerazum" target="_blank" class="btn-cta">💬 Telegram</a>
-        <a href="tel:+380939637998" class="btn-secondary">📞 Подзвонити</a>
-    </div>
-
     <footer>
         <p>&copy; 2026 Катерина Разумейко. Всі права захищено.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
             <a href="tel:+380939637998" style="color: white; margin: 0 5px;">+380939637998</a> | 
             <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" style="color: white; margin: 0 5px;">Instagram</a> | 
-            <a href="https://t.me/katerazum" target="_blank" style="color: white; margin: 0 5px;">Telegram</a>
+            <a href="https://t.me/katerazum" target="_blank" style="color: white; margin: 0 5px;">Telegram</a> | 
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJy01518bS1EARl211H5Y_y4w" target="_blank" style="color: white; margin: 0 5px;">Google Maps</a>
         </p>
     </footer>
 
