@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Др. Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
+    <title>Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
     <meta name="description" content="Прийом лікаря-онкодерматолога та дерматохірурга Катерини Разумейко у Києві. Дерматоскопія, біопсія, Mohs-хірургія, радіохвильове та хірургічне видалення новоутворень.">
     
-    <meta property="og:title" content="Др. Катерина Разумейко | Онкодерматолог, Дерматохірург">
+    <meta property="og:title" content="Катерина Разумейко | Онкодерматолог, Дерматохірург">
     <meta property="og:description" content="Рання діагностика, біопсія та висічення утворень шкіри. Професійно, безпечно, відповідно до міжнародних онкологічних протоколів.">
     <meta property="og:url" content="https://dr-razumeiko.com">
     <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Physician",
-      "name": "Др. Катерина Разумейко",
+      "name": "Катерина Разумейко",
       "medicalSpecialty": ["Dermatology", "Oncology", "SurgicalDermatology"],
       "telephone": "+380939637998",
       "address": {
@@ -50,7 +50,7 @@
             color: var(--text-color);
             line-height: 1.6;
             background-color: #fff;
-            padding-bottom: 70px;
+            padding-bottom: 75px;
         }
 
         header {
@@ -67,11 +67,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
@@ -98,6 +98,17 @@
             color: var(--accent-color);
         }
 
+        /* Мобільна кнопка меню */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
         .btn-cta {
             background: var(--primary-color);
             color: var(--white);
@@ -109,6 +120,7 @@
             box-shadow: 0 4px 12px rgba(15, 44, 89, 0.2);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
         }
 
@@ -120,15 +132,15 @@
         .hero {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .hero-text h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: var(--primary-color);
             margin-bottom: 1.2rem;
             line-height: 1.2;
@@ -136,7 +148,7 @@
         }
 
         .hero-text p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #4a5568;
         }
@@ -157,6 +169,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.2s;
+            text-align: center;
         }
 
         .btn-secondary:hover {
@@ -173,7 +186,7 @@
         }
 
         .section {
-            padding: 4rem 2rem;
+            padding: 3.5rem 1.5rem;
         }
 
         .bg-light {
@@ -187,9 +200,9 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             position: relative;
         }
 
@@ -205,13 +218,13 @@
 
         .services-category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
         }
 
         .service-category-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 16px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
@@ -219,8 +232,8 @@
 
         .service-category-card h3 {
             color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
             border-bottom: 2px solid var(--bg-light);
             padding-bottom: 0.5rem;
         }
@@ -248,14 +261,14 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .gallery-grid img {
             width: 100%;
-            height: 280px;
+            height: 250px;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: var(--shadow);
@@ -273,18 +286,18 @@
         }
 
         .contact-info-block {
-            padding: 3rem;
+            padding: 2.5rem 1.8rem;
         }
 
         .contact-map-block {
             position: relative;
-            min-height: 380px;
+            min-height: 350px;
         }
 
         .contact-map-block iframe {
             width: 100%;
             height: 100%;
-            min-height: 380px;
+            min-height: 350px;
             border: 0;
         }
 
@@ -295,27 +308,35 @@
             right: 0;
             background: var(--white);
             border-top: 1px solid var(--border-color);
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+            gap: 10px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
             z-index: 999;
+        }
+
+        .sticky-bottom-bar a {
+            flex: 1;
+            font-size: 0.95rem;
+            padding: 0.65rem 0.5rem;
+            text-align: center;
         }
 
         .faq-item {
             background: var(--white);
-            padding: 1.8rem;
+            padding: 1.5rem;
             border-radius: 12px;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             border: 1px solid var(--border-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .faq-item h3 {
             color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.15rem;
             font-weight: 700;
         }
 
@@ -326,14 +347,14 @@
         .timeline-block h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             border-left: 4px solid var(--accent-color);
             padding-left: 0.8rem;
         }
 
         .timeline-item {
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 1.3rem;
             margin-bottom: 1.2rem;
             border-left: 2px solid var(--border-color);
         }
@@ -352,7 +373,7 @@
         .timeline-date {
             font-weight: 700;
             color: var(--accent-color);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .spa-page {
@@ -367,30 +388,80 @@
             background: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1.5rem 5rem 1.5rem;
         }
 
+        /* Мобільна адаптація */
         @media (max-width: 850px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-btn-desktop {
+                display: none;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding: 2rem 1rem;
+                gap: 1.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
             }
 
             .hero-action-group {
                 justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-action-group a {
+                width: 100%;
             }
 
             .contact-card-wrapper {
                 grid-template-columns: 1fr;
             }
 
-            .nav-links {
-                display: none;
-            }
-
             .about-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            .contact-info-block {
+                padding: 1.5rem;
+            }
+
+            .section {
+                padding: 2.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -399,8 +470,11 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo" data-link>Др. Катерина Разумейко</a>
-            <ul class="nav-links">
+            <a href="/" class="logo" data-link>Катерина Разумейко</a>
+            
+            <button class="hamburger" id="menu-toggle" aria-label="Меню">☰</button>
+
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="/" data-link>Головна</a></li>
                 <li><a href="/about" data-link>Про лікаря</a></li>
                 <li><a href="/services" data-link>Послуги</a></li>
@@ -408,7 +482,8 @@
                 <li><a href="/blog" data-link>Блог</a></li>
                 <li><a href="/contacts" data-link>Контакти</a></li>
             </ul>
-            <div>
+
+            <div class="nav-btn-desktop">
                 <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися</a>
             </div>
         </div>
@@ -493,7 +568,7 @@
                     </div>
 
                     <div>
-                        <h2 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 2rem;">Др. Катерина Разумейко</h2>
+                        <h2 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.8rem;">Катерина Разумейко</h2>
                         <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 1.5rem;">Загальний стаж клінічної роботи — 7 років</p>
 
                         <div style="background: #eef6f9; padding: 1.2rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
@@ -655,7 +730,7 @@
 
                     <div class="faq-item">
                         <h3>Чи можна видалити родимку одразу під час консультації?</h3>
-                        <p>У багатьох випадках — так! Спочатку лікар проводить огляд новоутворень шкіри та визначає, чи можна видаляти утворення та підбирає оптимальний метод видалення. Якщо мова йде про звичайну родимку та радіохвильовий метод видалення — процедура відбувається одразу. Якщо необхідні додаткові обстеження або ж інша тактика, це обговорюється з пацієнтом індивідуально та складається план лікування.</p>
+                        <p>У багатьох випадках — так! Спочатку лікар проводиогляд новоутворень шкіри та визначає, чи можна видаляти утворення та підбирає оптимальний метод видалення. Якщо мова йде про звичайну родимку та радіохвильовий метод видалення — процедура відбувається одразу. Якщо необхідні додаткові обстеження або ж інша тактика, це обговорюється з пацієнтом індивідуально та складається план лікування.</p>
                     </div>
 
                     <div class="faq-item">
@@ -711,23 +786,23 @@
                 <h1 class="section-title">Локація та Запис</h1>
                 <div class="contact-card-wrapper">
                     <div class="contact-info-block">
-                        <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Консультативний прийом</h2>
+                        <h2 style="color: var(--primary-color); margin-bottom: 1.2rem;">Консультативний прийом</h2>
                         <p style="margin-bottom: 0.8rem;"><strong>Адреса:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
                         <p style="margin-bottom: 0.8rem;"><strong>Графік роботи:</strong> понеділок–п’ятниця 09:00–14:00</p>
                         <p style="margin-bottom: 1.2rem;"><strong>Телефон:</strong> <a href="tel:+380939637998" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">+380939637998</a></p>
                         
                         <p style="margin-bottom: 1rem;"><strong>Запис через месенджери та соцмережі:</strong></p>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Telegram: @katerazum</a>
-                            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" class="btn-secondary">Instagram Direct</a>
+                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="https://t.me/katerazum" target="_blank" class="btn-cta" style="width: 100%;">Telegram: @katerazum</a>
+                            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" class="btn-secondary" style="width: 100%;">Instagram Direct</a>
                         </div>
                     </div>
                     <div class="contact-map-block">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453.59573943905076!2d30.416530813839177!3d50.4345066053751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdc846bdbedd%3A0x487cc2809f9727df!2sLikar%20Onkodermatoloh%2C%20Khirurh-Onkoloh%20Kateryna%20Razumeyko!5e1!3m2!1suk!2sua!4v1788549167259!5m2!1suk!2sua&hl=uk"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453.59573943905076!2d30.416530813839177!3d50.4345066053751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdc846bdbedd%3A0x487cc2809f9727df!2sLikar%20Onkodermatoloh%2C%20Khirurh-Onkoloh%20Kateryna%20Razumeyko!5e1!3m2!1suk!2sua!4v1788549167259!5m2!1suk!2sua&hl=uk" 
                             width="100%" 
                             height="100%" 
-                            style="border:0; min-height: 380px;" 
+                            style="border:0; min-height: 350px;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="strict-origin-when-cross-origin">
@@ -738,22 +813,18 @@
         </section>
     </main>
 
-    <!-- Плаваюча кнопка для мобільних -->
+    <!-- Плаваюча кнопка зв'язку для мобільних -->
     <div class="sticky-bottom-bar">
-        <div>
-            <strong style="color: var(--primary-color);">Др. Катерина Разумейко</strong>
-            <div style="font-size: 0.85rem; color: #666;">пн-пт 09:00-14:00</div>
-        </div>
-        <a href="tel:+380939637998" class="btn-cta">📞 Подзвонити</a>
+        <a href="https://t.me/katerazum" target="_blank" class="btn-cta">💬 Telegram</a>
+        <a href="tel:+380939637998" class="btn-secondary">📞 Подзвонити</a>
     </div>
 
     <footer>
-        <p>&copy; 2026 Др. Катерина Разумейко. Всі права захищено.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-            <a href="tel:+380939637998" style="color: white; margin: 0 10px;">+380939637998</a> | 
-            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" style="color: white; margin: 0 10px;">Instagram</a> | 
-            <a href="https://t.me/katerazum" target="_blank" style="color: white; margin: 0 10px;">Telegram</a> |
-            <a href="https://maps.app.goo.gl/GM5VSzT9AZGMQzBm6" target="_blank" style="color: white; margin: 0 10px;">Google Maps</a>
+        <p>&copy; 2026 Катерина Разумейко. Всі права захищено.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
+            <a href="tel:+380939637998" style="color: white; margin: 0 5px;">+380939637998</a> | 
+            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" style="color: white; margin: 0 5px;">Instagram</a> | 
+            <a href="https://t.me/katerazum" target="_blank" style="color: white; margin: 0 5px;">Telegram</a>
         </p>
     </footer>
 
@@ -767,9 +838,17 @@
             '/contacts': 'contacts-view'
         };
 
+        const navMenu = document.getElementById('nav-menu');
+        const menuToggle = document.getElementById('menu-toggle');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
         function navigate(path) {
             window.history.pushState({}, "", path);
             renderPage(path);
+            navMenu.classList.remove('open');
         }
 
         function renderPage(path) {
