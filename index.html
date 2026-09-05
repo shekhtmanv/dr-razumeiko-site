@@ -3,501 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
-    <meta name="description" content="Прийом лікаря-онкодерматолога та дерматохірурга Катерини Разумейко у Києві. Дерматоскопія, біопсія, Mohs-хірургія, видалення новоутворень.">
+    <title>Онкодерматолог, Дерматохірург Катерина Разумейко | Київ</title>
+    <meta name="description" content="Прийом лікаря-онкодерматолога та дерматохірурга Катерини Разумейко у Києві. Дерматоскопія, біопсія шкіри, Mohs-хірургія, видалення новоутворень.">
 
     <style>
         :root {
-            --dark-bg: #2b2625;
-            --cream-bg: #f4efe6;
-            --card-bg: #fcf9f4;
-            --accent-orange: #e59338;
-            --text-dark: #231f1e;
-            --text-light: #ffffff;
-            --border-radius: 20px;
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --border-radius: 12px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.5;
-            padding-bottom: 70px;
+            line-height: 1.6;
         }
 
-        /* Шапка сайту */
+        /* Навігація */
         header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
-            background: var(--dark-bg);
-            padding: 1rem 1.2rem;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .header-container {
-            max-width: 1100px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 1.5rem;
         }
 
         .logo {
-            color: var(--accent-orange);
+            font-size: 1.2rem;
             font-weight: 700;
-            font-size: 1.1rem;
+            color: var(--primary-color);
             text-decoration: none;
-            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
         }
 
         .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
             background: none;
             border: none;
-            color: var(--text-light);
-            font-size: 1.8rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Контейнер сторінок */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            min-height: 70vh;
+        }
+
+        /* Загальні елементи UI */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            border: none;
             cursor: pointer;
         }
 
-        .nav-links {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--dark-bg);
-            flex-direction: column;
-            padding: 1.5rem;
-            gap: 1.2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .btn:hover {
+            background-color: #b04300;
+            transform: translateY(-2px);
         }
 
-        .nav-links.open {
-            display: flex;
+        .card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
         }
 
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .phone-icon-btn {
-            background: var(--card-bg);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
+        .hero {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.2rem;
+            gap: 2.5rem;
+            flex-wrap: wrap;
         }
 
-        /* Hero Section (Перший екран) */
-        .hero-section {
-            position: relative;
-            background-color: var(--dark-bg);
-            padding: 1rem 1rem 3rem 1rem;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .hero-img-wrapper {
-            position: relative;
+        .hero-img {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
             border-radius: var(--border-radius);
             overflow: hidden;
-            margin-bottom: 1.5rem;
-            max-height: 500px;
         }
 
-        .hero-img-wrapper img {
+        .hero-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
+            object-fit: cover;
         }
 
-        .hero-overlay-text {
-            margin-top: 1rem;
+        .hero-content {
+            flex: 1.5;
+            min-width: 280px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
 
         .hero-subtitle {
-            color: var(--accent-orange);
             font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .hero-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        .btn-orange {
-            background: var(--accent-orange);
-            color: var(--text-light);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            display: inline-block;
-            width: 100%;
-            max-width: 350px;
-            box-shadow: 0 4px 15px rgba(229, 147, 56, 0.3);
-            text-transform: uppercase;
-        }
-
-        /* Загальний блок секцій */
-        .section-wrapper {
-            background: var(--cream-bg);
+        .service-item {
+            background-color: var(--white);
+            padding: 1.5rem;
             border-radius: var(--border-radius);
-            padding: 2.5rem 1.2rem;
-            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        .section-heading {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        /* Спеціальний заголовок категорії послуг */
-        .category-header-pill {
-            background: #e7dfd3;
-            padding: 0.8rem 1.5rem;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-align: center;
-            margin: 1.5rem 0 1rem 0;
-        }
-
-        /* Картки послуг у стилі сайту-прикладу */
-        .service-card-item {
-            background: var(--card-bg);
-            border-radius: 18px;
-            padding: 1.2rem;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-
-        .service-icon-circle {
-            background: var(--accent-orange);
-            width: 55px;
-            height: 55px;
-            min-width: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .service-card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        /* Блок «Про лікаря / Принципи» */
-        .dark-card-item {
-            background: var(--dark-bg);
-            color: var(--text-light);
-            border-radius: 18px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .accent-text-block {
-            color: var(--accent-orange);
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        /* FAQ Картки */
-        .faq-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .faq-card h3 {
-            color: var(--accent-orange);
-            font-size: 1.1rem;
+        .service-item h3 {
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
-        /* Контакти */
-        .contact-box {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .map-container {
-            border-radius: 20px;
+        .map-wrapper {
+            margin-top: 1.5rem;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            height: 300px;
+            height: 350px;
         }
 
-        /* Плаваючий Bottom Bar */
-        .bottom-sticky-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--dark-bg);
-            padding: 0.75rem 1rem;
-            display: flex;
-            gap: 10px;
-            z-index: 999;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        /* SPA видимість */
+        .spa-page {
+            display: none;
         }
 
-        .bottom-sticky-nav a {
-            flex: 1;
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
+        .spa-page.active {
+            display: block;
         }
-
-        .scroll-top-btn {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background: #e7dfd3;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            z-index: 998;
-        }
-
-        .spa-page { display: none; }
-        .spa-page.active { display: block; }
 
         footer {
+            background-color: var(--primary-color);
+            color: var(--white);
             text-align: center;
-            color: #888;
-            padding: 2rem 1rem;
-            font-size: 0.85rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-container">
-            <button class="hamburger" id="menu-toggle">☰</button>
-            <a href="/" class="logo" data-link>ДР. КАТЕРИНА РАЗУМЕЙКО</a>
-            <a href="tel:+380939637998" class="phone-icon-btn">📞</a>
+        <div class="nav-container">
+            <a href="/" class="logo" data-link>Др. Катерина Разумейко</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" data-link>Головна</a></li>
+                <li><a href="/about" data-link>Про лікаря</a></li>
+                <li><a href="/services" data-link>Послуги</a></li>
+                <li><a href="/faq" data-link>Часті питання</a></li>
+                <li><a href="/contacts" data-link>Контакти</a></li>
+            </ul>
         </div>
-        <ul class="nav-links" id="nav-menu">
-            <li><a href="/" data-link>Головна</a></li>
-            <li><a href="/about" data-link>Про лікаря</a></li>
-            <li><a href="/services" data-link>Що я лікую</a></li>
-            <li><a href="/faq" data-link>Часті питання</a></li>
-            <li><a href="/contacts" data-link>Контакти</a></li>
-        </ul>
     </header>
 
-    <main id="app" class="container">
-        <section id="home-view" class="spa-page active">
-            <div class="hero-section">
-                <div class="hero-img-wrapper">
+    <main class="container">
+        <!-- Головна сторінка -->
+        <section id="home-page" class="spa-page active">
+            <div class="card hero">
+                <div class="hero-img">
                     <img src="portrait.jpg" alt="Лікар Катерина Разумейко">
                 </div>
-                <div class="hero-overlay-text">
-                    <div class="hero-subtitle">Онкодерматолог • Дерматохірург</div>
-                    <h1 class="hero-title">Катерина Разумейко</h1>
-                    <a href="https://t.me/katerazum" target="_blank" class="btn-orange">Отримати консультацію</a>
+                <div class="hero-content">
+                    <h1>Катерина Разумейко</h1>
+                    <div class="hero-subtitle">Лікар-онкодерматолог, дерматохірург</div>
+                    <p style="margin-bottom: 1.5rem;">
+                        Діагностика та хірургічне лікування новоутворень шкіри в Києві. Раннє виявлення меланоми, дерматоскопія, біопсія та висічення за міжнародними стандартами.
+                    </p>
+                    <a href="https://t.me/katerazum" target="_blank" class="btn">Записатися на прийом</a>
                 </div>
             </div>
 
-            <div class="section-wrapper">
-                <h2 class="section-heading">Про лікаря</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 1.2rem; font-weight: 600;">
-                    Мене звати Катерина Разумейко, і я лікар-онкодерматолог та дерматохірург із 7-річним досвідом клінічної практики.
-                </p>
-                <p style="margin-bottom: 1.5rem; color: #555;">
-                    Спеціалізуюся на ранній діагностиці новоутворень шкіри (дерматоскопія, цифрове картування), біопсії та хірургічному лікуванні відповідно до міжнародних протоколів.
-                </p>
-                <a href="/about" data-link class="btn-orange" style="background: var(--dark-bg); text-align: center;">Детальніше про лікаря →</a>
-            </div>
-
-            <div class="section-wrapper">
-                <h2 class="section-heading">Що я лікую</h2>
-
-                <div class="category-header-pill">Діагностика & Скринінг</div>
-                
-                <div class="service-card-item">
-                    <div class="service-icon-circle">🔍</div>
-                    <div class="service-card-title">Дерматоскопія новоутворень шкіри</div>
-                </div>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">🔬</div>
-                    <div class="service-card-title">Скринінг та картування родимок</div>
-                </div>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">🧪</div>
-                    <div class="service-card-title">Біопсія шкіри (Панч, Шейв, Ексцизійна)</div>
-                </div>
-
-                <div class="category-header-pill">Онкологія & Хірургія</div>
-
-                <div class="service-card-item">
-                    <div class="service-icon-circle">⚕️</div>
-                    <div class="service-card-title">Видалення меланоми та раку шкіри</div>
-                </div>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">✂️</div>
-                    <div class="service-card-title">Mohs-хірургія (мікрографічна)</div>
-                </div>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">⚡</div>
-                    <div class="service-card-title">Радіохвильове та класичне висічення</div>
-                </div>
-
-                <div style="margin-top: 1.5rem; text-align: center;">
-                    <a href="/services" data-link class="btn-orange">Всі послуги та напрямки</a>
-                </div>
-            </div>
-
-            <div class="section-wrapper">
-                <h2 class="section-heading">Як я працюю?</h2>
-                <div class="accent-text-block">Один із головних принципів роботи — чесність та відкритість.</div>
-
-                <div class="dark-card-item">
-                    Кажу правду, навіть якщо вона не приємна, зберігаю тактовність і не завдаю зайвих страждань.
-                </div>
-                <div class="dark-card-item">
-                    Для мене важливо, щоб пацієнти розуміли, що відбувається з ними, і чого очікувати від лікування.
-                </div>
-            </div>
-        </section>
-
-        <section id="about-view" class="spa-page">
-            <div class="section-wrapper">
-                <h1 class="section-heading">Катерина Разумейко</h1>
-                <p style="color: var(--accent-orange); font-weight: 700; margin-bottom: 1.5rem;">Загальний стаж клінічної роботи — 7 років</p>
-
-                <div class="dark-card-item">
-                    <strong>Членство в асоціаціях:</strong>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>International Dermoscopy Society (IDS)</li>
-                        <li>European Academy of Dermatology and Venereology (EADV)</li>
-                        <li>Українська асоціація лікарів-дерматовенерологів</li>
-                    </ul>
-                </div>
-
-                <h3 style="margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">Освіта та стажування</h3>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">🎓</div>
-                    <div>
-                        <strong>НМУ ім. О.О. Богомольця (2013-2019)</strong>
-                        <p style="font-size: 0.9rem; color: #666;">Спеціальність «Лікувальна справа»</p>
+            <div class="card">
+                <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Спеціалізація та напрямки</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Дерматоскопія</h3>
+                        <p>Огляд та цифрове картування родимок для виявлення ризиків на ранніх стадіях.</p>
                     </div>
-                </div>
-                <div class="service-card-item">
-                    <div class="service-icon-circle">🏥</div>
-                    <div>
-                        <strong>Національний інститут раку (2025)</strong>
-                        <p style="font-size: 0.9rem; color: #666;">Професійне стажування, Mohs-хірургія</p>
+                    <div class="service-item">
+                        <h3>Дерматохірургія</h3>
+                        <p>Видалення новоутворень (родимок, папілом, кератом) радіохвильовим та хірургічним методом.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Онкодерматологія</h3>
+                        <p>Діагностика та висічення раку шкіри (базаліома, плоскоклітинний рак, меланома).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services-view" class="spa-page">
-            <div class="section-wrapper">
-                <h1 class="section-heading">Повний перелік послуг</h1>
-                
-                <div class="category-header-pill">Консультації & Контроль</div>
-                <div class="service-card-item"><div class="service-icon-circle">📋</div><div class="service-card-title">Консультація онкодерматолога</div></div>
-                <div class="service-card-item"><div class="service-icon-circle">🔎</div><div class="service-card-title">Дерматоскопічний огляд родинoк</div></div>
-
-                <div class="category-header-pill">Видалення утворень</div>
-                <div class="service-card-item"><div class="service-icon-circle">🔘</div><div class="service-card-title">Видалення невусів (родимок)</div></div>
-                <div class="service-card-item"><div class="service-icon-circle">⚡</div><div class="service-card-title">Видалення папілом та кератом</div></div>
-                <div class="service-card-item"><div class="service-icon-circle">🔬</div><div class="service-card-title">Гістологічне дослідження матеріалу</div></div>
+        <!-- Про лікаря -->
+        <section id="about-page" class="spa-page">
+            <div class="card">
+                <h1 style="color: var(--primary-color); margin-bottom: 1rem;">Про лікаря</h1>
+                <p style="margin-bottom: 1rem;">
+                    Катерина Разумейко — кваліфікований лікар-онкодерматолог та дерматохірург із 7-річним досвідом клінічної практики.
+                </p>
+                <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem 0;">Освіта та стажування:</h3>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Національний медичний університет ім. О.О. Богомольця (2013–2019)</li>
+                    <li>Спеціалізація з дерматовенерології та онкології</li>
+                    <li>Професійне стажування з Mohs-хірургії в Національному інституті раку (2025)</li>
+                </ul>
+                <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem 0;">Членство в організаціях:</h3>
+                <ul style="padding-left: 1.5rem;">
+                    <li>International Dermoscopy Society (IDS)</li>
+                    <li>European Academy of Dermatology and Venereology (EADV)</li>
+                </ul>
             </div>
         </section>
 
-        <section id="faq-view" class="spa-page">
-            <div class="section-wrapper">
-                <h1 class="section-heading">Часті питання</h1>
-                <div class="faq-card">
-                    <h3>Чи можна видалити родимку одразу під час консультації?</h3>
-                    <p>Так! Якщо при дерматоскопії немає протипоказань, видалення проводиться одразу під час прийому.</p>
-                </div>
-                <div class="faq-card">
-                    <h3>Чи відправляється матеріал на гістологію?</h3>
-                    <p>Абсолютно всі видалені родимки та утворення обов'язково відправляються на патогістологічну експертизу.</p>
+        <!-- Послуги -->
+        <section id="services-page" class="spa-page">
+            <div class="card">
+                <h1 style="color: var(--primary-color); margin-bottom: 1.5rem;">Послуги та процедури</h1>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Консультація онкодерматолога</h3>
+                        <p>Повний огляд шкірних покривів та дерматоскопічне дослідження всіх утворень.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Біопсія шкіри</h3>
+                        <p>Панч-біопсія, шейв-біопсія або ексцизійна біопсія для точності діагнозу.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Хірургічне видалення</h3>
+                        <p>Видалення доброякісних та злоякісних утворень з гістологічним дослідженням.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Mohs-хірургія</h3>
+                        <p>Мікрографічне хірургічне висічення пухлин шкіри з максимальним збереженням здорових тканин.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacts-view" class="spa-page">
-            <div class="section-wrapper">
-                <h1 class="section-heading">Локація та Запис</h1>
-                <div class="contact-box">
-                    <p style="margin-bottom: 0.5rem;"><strong>Адреса:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Графік:</strong> Пн–Пт: 09:00–14:00</p>
-                    <p style="margin-bottom: 1rem;"><strong>Телефон:</strong> <a href="tel:+380939637998" style="color: var(--accent-orange);">+380939637998</a></p>
-                    
-                    <a href="https://t.me/katerazum" target="_blank" class="btn-orange" style="margin-bottom: 0.8rem;">Запис у Telegram</a>
-                    <a href="https://www.instagram.com/dr_razumeiko" target="_blank" class="btn-orange" style="background: transparent; border: 2px solid var(--accent-orange); color: var(--accent-orange); text-align: center;">Instagram Direct</a>
+        <!-- FAQ -->
+        <section id="faq-page" class="spa-page">
+            <div class="card">
+                <h1 style="color: var(--primary-color); margin-bottom: 1.5rem;">Часті питання</h1>
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--accent-color);">Як підготуватися до прийому?</h3>
+                    <p>Спеціальна підготовка не потрібна. Бажано не наносити макіяж або доглядові засоби на ділянки новоутворень перед оглядом.</p>
                 </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--accent-color);">Чи обов'язково відправляти видалений матеріал на гістологію?</h3>
+                    <p>Так, це обов'язковий стандарт безпеки у клінічній онкодерматології для підтвердження доброякісності утворення.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="map-container">
+        <!-- Контакти -->
+        <section id="contacts-page" class="spa-page">
+            <div class="card">
+                <h1 style="color: var(--primary-color); margin-bottom: 1.5rem;">Контакна інформація</h1>
+                <p><strong>Адреса прийому:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
+                <p><strong>Графік прийому:</strong> Понеділок – П'ятниця: 09:00 – 14:00</p>
+                <p><strong>Телефон:</strong> <a href="tel:+380939637998" style="color: var(--accent-color);">+38 (093) 963-79-98</a></p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://t.me/katerazum" target="_blank" class="btn">Записатися в Telegram</a>
+                </p>
+
+                <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453.59573943905076!2d30.416530813839177!3d50.4345066053751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdc846bdbedd%3A0x487cc2809f9727df!2sLikar%20Onkodermatoloh%2C%20Khirurh-Onkoloh%20Kateryna%20Razumeyko!5e1!3m2!1suk!2sua!4v1788549167259!5m2!1suk!2sua&hl=uk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </section>
     </main>
-
-    <a href="#" class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
-
-    <div class="bottom-sticky-nav">
-        <a href="https://t.me/katerazum" target="_blank" class="btn-orange" style="width: auto;">💬 Telegram</a>
-        <a href="tel:+380939637998" style="background: #e7dfd3; color: var(--text-dark);">📞 Зателефонувати</a>
-    </div>
 
     <footer>
         <p>© 2026 Др. Катерина Разумейко. Всі права захищено.</p>
@@ -505,17 +376,17 @@
 
     <script>
         const routes = {
-            '/': 'home-view',
-            '/about': 'about-view',
-            '/services': 'services-view',
-            '/faq': 'faq-view',
-            '/contacts': 'contacts-view'
+            '/': 'home-page',
+            '/about': 'about-page',
+            '/services': 'services-page',
+            '/faq': 'faq-page',
+            '/contacts': 'contacts-page'
         };
 
+        const hamburger = document.getElementById('hamburger-btn');
         const navMenu = document.getElementById('nav-menu');
-        const menuToggle = document.getElementById('menu-toggle');
 
-        menuToggle.addEventListener('click', () => {
+        hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('open');
         });
 
@@ -526,11 +397,11 @@
         }
 
         function renderPage(path) {
-            const viewId = routes[path] || 'home-view';
+            const pageId = routes[path] || 'home-page';
             document.querySelectorAll('.spa-page').forEach(page => {
                 page.classList.remove('active');
             });
-            const activePage = document.getElementById(viewId);
+            const activePage = document.getElementById(pageId);
             if (activePage) {
                 activePage.classList.add('active');
             }
