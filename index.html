@@ -1,852 +1,245 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Катерина Разумейко | Онкодерматолог, Дерматохірург Київ</title>
-    <meta name="description" content="Прийом лікаря-онкодерматолога та дерматохірурга Катерини Разумейко у Києві. Дерматоскопія, біопсія, Mohs-хірургія, радіохвильове та хірургічне видалення новоутворень.">
-    
-    <meta property="og:title" content="Катерина Разумейко | Онкодерматолог, Дерматохірург">
-    <meta property="og:description" content="Рання діагностика, біопсія та висічення утворень шкіри. Професійно, безпечно, відповідно до міжнародних онкологічних протоколів.">
-    <meta property="og:url" content="https://dr-razumeiko.com">
-    <meta property="og:type" content="website">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Physician",
-      "name": "Катерина Разумейко",
-      "medicalSpecialty": ["Dermatology", "Oncology", "SurgicalDermatology"],
-      "telephone": "+380939637998",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "проспект Любомира Гузара, 3, корпус 4",
-        "addressLocality": "Київ",
-        "addressCountry": "UA"
-      },
-      "url": "https://dr-razumeiko.com"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Катерина Разумейко — Онкодерматолог та Хірург-Онколог у Києві</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    </script>
 
-    <style>
-        :root {
-            --primary-color: #0f2c59;
-            --accent-color: #1a5f7a;
-            --text-color: #2d3748;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background-color: #ffffff;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #fff;
-            padding-bottom: 0;
-        }
+    /* Header Navigation */
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f1f5f9;
+      z-index: 1000;
+    }
 
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            z-index: 1000;
-        }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+    }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .nav-menu {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-        }
+    .nav-link {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+    .nav-link:hover {
+      color: #0f172a;
+    }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+    /* Burger Menu Button */
+    .burger-menu {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: #0f172a;
+    }
 
-        /* Мобільна кнопка меню */
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding: 0 5px;
-        }
+    .burger-menu svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
 
-        .btn-cta {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(15, 44, 89, 0.2);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+      text-align: center;
+    }
 
-        .btn-cta:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-        }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
 
-        .hero-text h1 {
-            font-size: 2.4rem;
-            color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-            font-weight: 800;
-        }
+    .hero-description {
+      font-size: 1.125rem;
+      color: #475569;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
 
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #4a5568;
-        }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
 
-        .hero-action-group {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      width: 100%;
+    }
 
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 0.7rem 1.4rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            text-align: center;
-        }
+    .btn-primary {
+      background-color: #0f2b5c;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(15, 43, 92, 0.15);
+    }
 
-        .btn-secondary:hover {
-            background: var(--accent-color);
-            color: white;
-        }
+    .btn-primary:hover {
+      background-color: #0b2046;
+    }
 
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            object-fit: cover;
-        }
+    .btn-outline {
+      background-color: transparent;
+      color: #0f2b5c;
+      border: 2px solid #0f2b5c;
+    }
 
-        .section {
-            padding: 3.5rem 1.5rem;
-        }
+    .btn-outline:hover {
+      background-color: rgba(15, 43, 92, 0.05);
+    }
 
-        .bg-light {
-            background: var(--bg-light);
-        }
+    /* Mobile Adaptivity (max-width: 768px) */
+    @media (max-width: 768px) {
+      .header-container {
+        /* Розміщуємо бургер ліворуч, а логотип праворуч */
+        flex-direction: row;
+        justify-content: space-between;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      .burger-menu {
+        display: block;
+        order: 1; /* Ліва сторона */
+      }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
+      .logo {
+        order: 2; /* Права сторона */
+      }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-color);
-            margin: 0.8rem auto 0;
-            border-radius: 2px;
-        }
+      .nav-menu {
+        display: none; /* Сховано за замовчуванням для мобільного */
+      }
 
-        .services-category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-        }
+      .hero {
+        padding: 40px 0;
+      }
 
-        .service-category-card {
-            background: var(--white);
-            padding: 1.8rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-        }
+      .hero-title {
+        font-size: 1.75rem;
+      }
 
-        .service-category-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 0.5rem;
-        }
-
-        .service-category-card ul {
-            list-style: none;
-        }
-
-        .service-category-card ul li {
-            padding: 0.4rem 0;
-            position: relative;
-            padding-left: 1.4rem;
-            color: #4a5568;
-        }
-
-        .service-category-card ul li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-card-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-        }
-
-        .contact-info-block {
-            padding: 2.5rem 1.8rem;
-        }
-
-        .contact-map-block {
-            position: relative;
-            min-height: 350px;
-        }
-
-        .contact-map-block iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 350px;
-            border: 0;
-        }
-
-        .faq-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .faq-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.6rem;
-            font-size: 1.15rem;
-            font-weight: 700;
-        }
-
-        .timeline-block {
-            margin-bottom: 2rem;
-        }
-
-        .timeline-block h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.8rem;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 1.3rem;
-            margin-bottom: 1.2rem;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-color);
-        }
-
-        .timeline-date {
-            font-weight: 700;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-        }
-
-        .spa-page {
-            display: none;
-        }
-
-        .spa-page.active {
-            display: block;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-        }
-
-        /* Мобільна адаптація */
-        @media (max-width: 850px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 1.5rem;
-                gap: 1.2rem;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-btn-desktop {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 2rem 1rem;
-                gap: 1.8rem;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .hero-action-group {
-                justify-content: center;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-action-group a {
-                width: 100%;
-            }
-
-            .contact-card-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .contact-info-block {
-                padding: 1.5rem;
-            }
-
-            .section {
-                padding: 2.5rem 1rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+      .hero-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <a href="/" class="logo" data-link>Катерина Разумейко</a>
-            
-            <button class="hamburger" id="menu-toggle" aria-label="Меню">☰</button>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <!-- Кнопка бургера (зліва на мобільному) -->
+      <button class="burger-menu" aria-label="Відкрити меню">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
 
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="/" data-link>Головна</a></li>
-                <li><a href="/about" data-link>Про лікаря</a></li>
-                <li><a href="/services" data-link>Послуги</a></li>
-                <li><a href="/faq" data-link>Часті питання</a></li>
-                <li><a href="/blog" data-link>Блог</a></li>
-                <li><a href="/contacts" data-link>Контакти</a></li>
-            </ul>
+      <!-- Логотип / Назва (справа на мобільному) -->
+      <a href="#" class="logo">Катерина Разумейко</a>
 
-            <div class="nav-btn-desktop">
-                <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися</a>
-            </div>
+      <!-- Навігаційне меню для десктопу -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">Про лікаря</a></li>
+          <li><a href="#services" class="nav-link">Послуги</a></li>
+          <li><a href="#experience" class="nav-link">Досвід</a></li>
+          <li><a href="#faq" class="nav-link">Часті питання</a></li>
+          <li><a href="#contacts" class="nav-link">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Онкодерматологія та Хірургічна Дерматологія у Києві</h1>
+          <p class="hero-description">
+            Професійна діагностика новоутворень шкіри, дерматоскопія, біопсія, Mohs-хірургія та висічення за міжнародними онкологічними протоколами.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://t.me/" class="btn btn-primary" target="_blank" rel="noopener">
+              Записатися в Telegram
+            </a>
+            <a href="tel:+380939637998" class="btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+              </svg>
+              +380939637998
+            </a>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
+  </main>
 
-    <main id="app">
-        <!-- Головна -->
-        <section id="home-view" class="spa-page active">
-            <div class="hero">
-                <div class="hero-text">
-                    <h1>Онкодерматологія та Хірургічна Дерматологія у Києві</h1>
-                    <p>Професійна діагностика новоутворень шкіри, дерматоскопія, біопсія, Mohs-хірургія та висічення за міжнародними онкологічними протоколами.</p>
-                    <div class="hero-action-group">
-                        <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
-                        <a href="tel:+380939637998" class="btn-secondary">📞 +380939637998</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="portrait.jpg" alt="Лікар-онкодерматолог Катерина Разумейко">
-                </div>
-            </div>
-
-            <div class="section bg-light">
-                <div class="container">
-                    <h2 class="section-title">Основні напрямки прийому</h2>
-                    <div class="services-category-grid">
-                        <div class="service-category-card">
-                            <h3>Діагностика та Скринінг</h3>
-                            <ul>
-                                <li>Дерматоскопічне обстеження</li>
-                                <li>Скринінг злоякісних новоутворень</li>
-                                <li>Динамічне спостереження за невусами</li>
-                            </ul>
-                        </div>
-                        <div class="service-category-card">
-                            <h3>Біопсія шкіри</h3>
-                            <ul>
-                                <li>Панч, інцизійна, ексцизійна та шейв-біопсія</li>
-                                <li>Патогістологічна експертиза</li>
-                            </ul>
-                        </div>
-                        <div class="service-category-card">
-                            <h3>Хірургічне лікування &amp; Mohs</h3>
-                            <ul>
-                                <li>Видалення меланоми, базальноклітинного та плоскоклітинного раку</li>
-                                <li>Mohs-хірургія</li>
-                                <li>Радіохвильове та класичне висічення</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="container">
-                    <h2 class="section-title">Практичні маніпуляції та кабінет</h2>
-                    <div class="gallery-grid">
-                        <img src="operation_1.jpg" alt="Діагностика та дерматоскопія">
-                        <img src="operation_2.jpg" alt="Хірургічне висічення утворення">
-                        <img src="operation_3.jpg" alt="Операційний блок">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Про лікаря -->
-        <section id="about-view" class="spa-page">
-            <div class="container section">
-                <h1 class="section-title">Про лікаря</h1>
-                
-                <div style="display: grid; grid-template-columns: 320px 1fr; gap: 2.5rem; align-items: start;" class="about-grid">
-                    <div>
-                        <img src="portrait.jpg" alt="Катерина Разумейко" style="width: 100%; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 1.5rem;">
-                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem; font-size: 1.1rem;">Членство в асоціаціях:</h4>
-                            <ul style="padding-left: 1.2rem; font-size: 0.95rem;">
-                                <li style="margin-bottom: 0.4rem;">International Dermoscopy Society (IDS)</li>
-                                <li style="margin-bottom: 0.4rem;">European Academy of Dermatology and Venereology (EADV)</li>
-                                <li>Українська асоціація лікарів-дерматовенерологів і косметологів</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.8rem;">Катерина Разумейко</h2>
-                        <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 1.5rem;">Загальний стаж клінічної роботи — 7 років</p>
-
-                        <div style="background: #eef6f9; padding: 1.2rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
-                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.15rem;">Спеціалізація</h3>
-                            <p>Основний професійний напрям роботи — <strong>онкодерматологія та хірургічна дерматологія</strong>: діагностика, спостереження та хірургічне лікування новоутворень шкіри.</p>
-                            <p style="margin-top: 0.5rem;">Спеціалізуюсь на дерматоскопії та ранній діагностиці злоякісних новоутворень шкіри, цифровому картуванні, біопсії новоутворень шкіри, а також їх радіохвильовому, діатермокоагуляційному та хірургічному видаленні.</p>
-                            <p style="margin-top: 0.5rem;">Досвід одразу у дерматовенерології, хірургії та онкохірургії дозволяє комплексно оцінювати кожне новоутворення — від первинної діагностики до визначення показань до спостереження, біопсії або хірургічного лікування.</p>
-                        </div>
-
-                        <div class="timeline-block">
-                            <h3>Освіта</h3>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2013–2019</div>
-                                <div><strong>Національний медичний університет імені О. О. Богомольця</strong></div>
-                                <div>Спеціальність «Лікувальна справа», кваліфікація лікаря.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2019–2022</div>
-                                <div><strong>НУОЗ України імені П. Л. Шупика</strong></div>
-                                <div>Інтернатура за спеціальністю «Акушерство і гінекологія».</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2022–2023</div>
-                                <div><strong>НУОЗ України імені П. Л. Шупика</strong></div>
-                                <div>Вторинна спеціалізація за спеціальністю «Хірургія».</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2023–2024</div>
-                                <div><strong>НУОЗ України імені П. Л. Шупика</strong></div>
-                                <div>Вторинна спеціалізація за спеціальністю «Онкохірургія».</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2024</div>
-                                <div><strong>Українська військово-медична академія</strong></div>
-                                <div>Вторинна спеціалізація «Загальна практика - сімейна медицина».</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2024–2025</div>
-                                <div><strong>Українська військово-медична академія</strong></div>
-                                <div>Вторинна спеціалізація за спеціальністю «Дерматовенерологія».</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2026–2027</div>
-                                <div><strong>Українська військово-медична академія</strong></div>
-                                <div>Вторинна спеціалізація за спеціальністю «Хірургічна дерматологія».</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-block">
-                            <h3>Досвід роботи</h3>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2019–2022</div>
-                                <div><strong>Київський обласний онкологічний диспансер</strong></div>
-                                <div>Працювала лікарем-інтерном, проводила амбулаторний прийом пацієнтів із новоутвореннями шкіри та молочної залози, дерматоскопічну діагностику, видалення доброякісних новоутворень та брала участь у хірургічному лікуванні пацієнтів.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2022–2025</div>
-                                <div><strong>Київська міська клінічна лікарня №18</strong></div>
-                                <div>Працювала лікарем-хірургом-онкологом. Проводила консультативний прийом, дерматоскопію новоутворень шкіри, діатермокоагуляційне та хірургічне видалення доброякісних і злоякісних новоутворень шкіри та молочної залози, працювала у стаціонарі.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2024–2025</div>
-                                <div><strong>Медичний центр Mediland</strong></div>
-                                <div>Дерматоскопія, цифрове картування шкіри на FotoFinder ATBM Master, радіохвильове та хірургічне видалення новоутворень шкіри.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Січень–Березень 2025</div>
-                                <div><strong>Національний інститут раку</strong></div>
-                                <div>Професійне стажування, навчання Mohs-хірургії.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">З листопада 2025 року</div>
-                                <div><strong>Київська міська клінічна лікарня №6</strong></div>
-                                <div>Амбулаторний прийом пацієнтів із новоутвореннями шкіри та молочної залози, дерматоскопічна діагностика, малоінвазивні та хірургічні методи лікування новоутворень, Mohs-хірургія.</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Послуги -->
-        <section id="services-view" class="spa-page">
-            <div class="container section">
-                <h1 class="section-title">Перелік послуг</h1>
-                <div class="services-category-grid">
-                    
-                    <div class="service-category-card">
-                        <h3>Консультація та діагностика</h3>
-                        <ul>
-                            <li>Консультація лікаря-дерматовенеролога</li>
-                            <li>Консультація хірурга-онколога / дерматоонколога</li>
-                            <li>Огляд та діагностика новоутворень шкіри</li>
-                            <li>Дерматоскопія новоутворень шкіри</li>
-                            <li>Скринінг шкіри для раннього виявлення злоякісних новоутворень</li>
-                            <li>Динамічне спостереження за меланоцитарними невусами та іншими новоутвореннями шкіри</li>
-                            <li>Визначення показань до біопсії або видалення новоутворення</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-category-card">
-                        <h3>Біопсія шкіри</h3>
-                        <ul>
-                            <li>Панч-біопсія</li>
-                            <li>Інцизійна біопсія</li>
-                            <li>Ексцизійна біопсія</li>
-                            <li>Шейв-біопсія</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-category-card">
-                        <h3>Видалення доброякісних новоутворень</h3>
-                        <ul>
-                            <li>Невуси (родимки)</li>
-                            <li>Папіломи та фіброепітеліальні поліпи</li>
-                            <li>Себорейні кератоми</li>
-                            <li>Дерматофіброми</li>
-                            <li>Атероми</li>
-                            <li>Ангіоми</li>
-                            <li>Інші доброякісні новоутворення шкіри та підшкірної клітковини</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-category-card">
-                        <h3>Хірургічна дерматологія</h3>
-                        <ul>
-                            <li>Хірургічне видалення новоутворень шкіри</li>
-                            <li>Радіохвильове видалення</li>
-                            <li>Видалення методом діатермокоагуляції</li>
-                            <li>Висічення новоутворень із накладанням косметичних швів</li>
-                            <li>Хірургічна корекція післяопераційних рубців</li>
-                            <li>Зняття швів та післяопераційне ведення рани</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-category-card">
-                        <h3>Онкодерматологія</h3>
-                        <ul>
-                            <li>Діагностика підозрілих новоутворень шкіри</li>
-                            <li>Рання діагностика меланоми</li>
-                            <li>Діагностика базальноклітинного та плоскоклітинного раку шкіри</li>
-                            <li>Біопсія новоутворень із підозрою на злоякісний процес</li>
-                            <li>Хірургічне лікування злоякісних новоутворень шкіри в межах відповідних показань</li>
-                            <li>Mohs-хірургія</li>
-                            <li>Формування подальшої тактики спостереження після встановлення діагнозу</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq-view" class="spa-page">
-            <div class="container section">
-                <h1 class="section-title">Часті питання (FAQ)</h1>
-                <div style="max-width: 900px; margin: 0 auto;">
-
-                    <div class="faq-item">
-                        <h3>Чи можна видалити родимку одразу під час консультації?</h3>
-                        <p>У багатьох випадках — так! Спочатку лікар проводиогляд новоутворень шкіри та визначає, чи можна видаляти утворення та підбирає оптимальний метод видалення. Якщо мова йде про звичайну родимку та радіохвильовий метод видалення — процедура відбувається одразу. Якщо необхідні додаткові обстеження або ж інша тактика, це обговорюється з пацієнтом індивідуально та складається план лікування.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи потрібно видаляти всі родимки?</h3>
-                        <p>Ні! Більшість невусів не потребують видалення. Видалення може бути рекомендоване за медичними та естетичними показаннями, на консультації лікар детально оглядає всі новоутворення та дає рекомендації по кожному з них.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Які родимки треба видаляти?</h3>
-                        <p>Для видалення родимок існують медичні та естетичні показання. До медичних показань відноситься хронічне травмування родимки (сюди ж відносяться виступаючі над рівнем шкіри родимки, що натираються одягом) та підозрілі ознаки при дерматоскопії. Естетична сторона питання теж важлива: якщо пацієнту не подобається вигляд родимки, вона заважає та спричиняє дискомфорт — це пряме показання до видалення.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Який найкращий метод видалення?</h3>
-                        <p>Метод видалення обирається індивідуально в залежності від виду, розміру та місця розташування новоутворення, а також особливостей та побажань пацієнта. На консультації лікар пояснює особливості, переваги та недоліки кожного методу для конкретного новоутворення та обирає найоптимальніший варіант з урахуванням всіх факторів.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи відправляється видалений матеріал на гістологію?</h3>
-                        <p>Якщо ми говоримо про родимки, то так, після видалення лікар обов’язково відправляє матеріал на гістологічне дослідження. Саме гістологія дозволяє остаточно підтвердити діагноз, визначити характер новоутворення та оцінити повноту видалення (за потреби).</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи залишиться шрам після видалення?</h3>
-                        <p>Будь-яке порушення цілісності шкіри викликає формування рубця. Його вигляд залежить від методу видалення, глибини та місця розташування новоутворення, протікання післяопераційного періоду та індивідуальних особливостей загоєння шкіри пацієнта. Лікар підбирає оптимальний метод, відштовхуючись від медичних та естетичних факторів, а також надає детальні рекомендації по загоєнню післяопераційної рани для отримання максимально естетичного результату.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Коли необхідно терміново показати родимку лікарю?</h3>
-                        <p>Будь-які зміни в ділянці утворення — привід показатися лікарю. Тривожними ознаками є: швидкий ріст, зміна форми та кольору, асиметрія утворення, кровоточивість. Та варто пам’ятати, що на початку в утворенні може не бути жодних змін, видимих неозборним оком. Помітити перші зміни можливо лише за допомогою дерматоскопа, тож не нехтуйте щорічними чек-апами у дерматолога/дерматоонколога.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Що робити, якщо відбулась травма родимки?</h3>
-                        <p>Обробити ранку прозорим антисептиком. Якщо рана кровоточить — притиснути ватним диском або невеликим відрізком бинта на 5-10 хвилин, заклеїти дихаючим гіпоалергенним пластирем та записатись на плановий огляд у дерматоонколога.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Блог -->
-        <section id="blog-view" class="spa-page">
-            <div class="container section">
-                <h1 class="section-title">Публікації та Блог</h1>
-                <p style="text-align: center;">Корисні матеріали про самодіагностику, профілактику захворювань шкіри та догляд скоро з'являться тут.</p>
-            </div>
-        </section>
-
-        <!-- Контакти -->
-        <section id="contacts-view" class="spa-page">
-            <div class="container section">
-                <h1 class="section-title">Локація та Запис</h1>
-                <div class="contact-card-wrapper">
-                    <div class="contact-info-block">
-                        <h2 style="color: var(--primary-color); margin-bottom: 1.2rem;">Консультативний прийом</h2>
-                        <p style="margin-bottom: 0.8rem;"><strong>Адреса:</strong> м. Київ, проспект Любомира Гузара, 3, корпус 4</p>
-                        <p style="margin-bottom: 0.8rem;"><strong>Графік роботи:</strong> понеділок–п’ятниця 09:00–14:00</p>
-                        <p style="margin-bottom: 1.2rem;"><strong>Телефон:</strong> <a href="tel:+380939637998" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">+380939637998</a></p>
-                        
-                        <p style="margin-bottom: 1rem;"><strong>Запис через месенджери та соцмережі:</strong></p>
-                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                            <a href="https://t.me/katerazum" target="_blank" class="btn-cta" style="width: 100%;">Telegram: @katerazum</a>
-                            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" class="btn-secondary" style="width: 100%;">Instagram Direct</a>
-                        </div>
-                    </div>
-                    <div class="contact-map-block">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453.59573943905076!2d30.416530813839177!3d50.4345066053751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdc846bdbedd%3A0x487cc2809f9727df!2sLikar%20Onkodermatoloh%2C%20Khirurh-Onkoloh%20Kateryna%20Razumeyko!5e1!3m2!1suk!2sua!4v1788549167259!5m2!1suk!2sua&hl=uk" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0; min-height: 350px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Катерина Разумейко. Всі права захищено.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
-            <a href="tel:+380939637998" style="color: white; margin: 0 5px;">+380939637998</a> | 
-            <a href="https://www.instagram.com/dr_razumeiko?igsi=MW1kaWpsYnVkNjhraQ==" target="_blank" style="color: white; margin: 0 5px;">Instagram</a> | 
-            <a href="https://t.me/katerazum" target="_blank" style="color: white; margin: 0 5px;">Telegram</a> | 
-            <a href="https://maps.app.goo.gl/WrqbMF9oYu7d1H5j8" target="_blank" style="color: white; margin: 0 5px;">Google Maps</a>
-        </p>
-    </footer>
-
-    <script>
-        const routes = {
-            '/': 'home-view',
-            '/about': 'about-view',
-            '/services': 'services-view',
-            '/faq': 'faq-view',
-            '/blog': 'blog-view',
-            '/contacts': 'contacts-view'
-        };
-
-        const navMenu = document.getElementById('nav-menu');
-        const menuToggle = document.getElementById('menu-toggle');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-        });
-
-        function navigate(path) {
-            window.history.pushState({}, "", path);
-            renderPage(path);
-            navMenu.classList.remove('open');
-        }
-
-        function renderPage(path) {
-            const viewId = routes[path] || 'home-view';
-            document.querySelectorAll('.spa-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            const activePage = document.getElementById(viewId);
-            if (activePage) {
-                activePage.classList.add('active');
-            }
-            window.scrollTo(0, 0);
-        }
-
-        document.addEventListener("click", e => {
-            if (e.target.matches("[data-link]")) {
-                e.preventDefault();
-                navigate(e.target.getAttribute("href"));
-            }
-        });
-
-        window.addEventListener("popstate", () => {
-            renderPage(window.location.pathname);
-        });
-
-        renderPage(window.location.pathname);
-    </script>
 </body>
 </html>
