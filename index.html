@@ -433,18 +433,28 @@
                 z-index: 10;
             }
 
-            .mobile-only .btn-cta,
+            /* Напівпрозорі стилі для мобільних кнопок поверх фото */
             .mobile-only .btn-secondary {
                 width: 100%;
                 text-align: center;
                 justify-content: center;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+                background: rgba(255, 255, 255, 0.85); /* Напівпрозорий білий */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                color: var(--primary-color);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             }
 
-            .mobile-only .btn-secondary {
-                background: rgba(255, 255, 255, 0.95);
-                color: var(--accent-color);
-                border: 2px solid var(--accent-color);
+            .mobile-only .btn-cta {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                background: rgba(15, 44, 89, 0.82); /* Напівпрозорий темно-синій */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             }
 
             .hero {
@@ -454,7 +464,6 @@
                 gap: 1.8rem;
             }
 
-            /* Зміна порядку на мобільних: спочатку фото з накладеними кнопками, потім текст */
             .hero-image {
                 order: 1;
             }
@@ -535,10 +544,10 @@
                 <div class="hero-image">
                     <img src="portrait.jpg" alt="Лікар-онкодерматолог Катерина Разумейко">
                     
-                    <!-- Кнопки для мобільних (накладаються на нижню частину фото) -->
+                    <!-- Кнопки для мобільних (поміняні місцями та з напівпрозорістю) -->
                     <div class="hero-action-group mobile-only">
-                        <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
                         <a href="tel:+380939637998" class="btn-secondary">📞 +380939637998</a>
+                        <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
                     </div>
                 </div>
             </div>
@@ -896,8 +905,8 @@
         }
 
         document.addEventListener("click", e => {
-            e.preventDefault();
             if (e.target.matches("[data-link]")) {
+                e.preventDefault();
                 navigate(e.target.getAttribute("href"));
             }
         });
