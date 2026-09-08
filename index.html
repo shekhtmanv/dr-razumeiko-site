@@ -433,19 +433,7 @@
                 z-index: 10;
             }
 
-            /* Більш прозорі мобільні кнопки поверх фото */
-            .mobile-only .btn-secondary {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-                background: rgba(255, 255, 255, 0.45);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                color: var(--primary-color);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            }
-
+            /* Прозора мобільна кнопка поверх фото */
             .mobile-only .btn-cta {
                 width: 100%;
                 text-align: center;
@@ -544,9 +532,8 @@
                 <div class="hero-image">
                     <img src="portrait.jpg" alt="Лікар-онкодерматолог Катерина Разумейко">
                     
-                    <!-- Кнопки для мобільних (змінений порядок + підвищена прозорість) -->
+                    <!-- Тільки кнопка Telegram для мобільних поверх фото -->
                     <div class="hero-action-group mobile-only">
-                        <a href="tel:+380939637998" class="btn-secondary">📞 +380939637998</a>
                         <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
                     </div>
                 </div>
