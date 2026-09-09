@@ -101,15 +101,47 @@
             color: var(--accent-color);
         }
 
-        /* Мобільна кнопка меню */
+        /* Стилі анімованої кнопки-бургера / хрестика */
         .hamburger {
             display: none;
             background: none;
             border: none;
-            font-size: 1.8rem;
-            color: var(--primary-color);
             cursor: pointer;
-            padding: 0 5px;
+            width: 30px;
+            height: 22px;
+            position: relative;
+            z-index: 1001;
+            padding: 0;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2.5px;
+            width: 100%;
+            background: var(--primary-color);
+            border-radius: 2px;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) { top: 0px; }
+        .hamburger span:nth-child(2) { top: 10px; }
+        .hamburger span:nth-child(3) { top: 20px; }
+
+        /* Стан при відкритому меню (перетворення на хрестик) */
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px;
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 10px;
         }
 
         .btn-cta {
@@ -290,6 +322,56 @@
             box-shadow: var(--shadow);
         }
 
+        .case-card {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .case-card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .cert-icon {
+            font-size: 1.8rem;
+        }
+
         .contact-card-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -384,7 +466,6 @@
             padding: 2.5rem 1.5rem;
         }
 
-        /* Мобільна адаптація */
         @media (max-width: 850px) {
             .nav-container {
                 position: relative;
@@ -436,7 +517,6 @@
                 z-index: 10;
             }
 
-            /* Прозора мобільна кнопка поверх фото */
             .mobile-only .btn-cta {
                 width: 100%;
                 text-align: center;
@@ -500,14 +580,20 @@
         <div class="nav-container">
             <a href="/" class="logo" data-link>Катерина Разумейко</a>
             
-            <button class="hamburger" id="menu-toggle" aria-label="Меню">☰</button>
+            <!-- Оновлена кнопка з трьома смужками для анімації у хрестик -->
+            <button class="hamburger" id="menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/" data-link>Головна</a></li>
                 <li><a href="/about" data-link>Про лікаря</a></li>
                 <li><a href="/services" data-link>Послуги</a></li>
-                <li><a href="/faq" data-link>Часті питання</a></li>
+                <li><a href="/cases" data-link>Кейси</a></li>
                 <li><a href="/blog" data-link>Блог</a></li>
+                <li><a href="/faq" data-link>Часті питання</a></li>
                 <li><a href="/contacts" data-link>Контакти</a></li>
             </ul>
 
@@ -525,7 +611,6 @@
                     <h1>Онкодерматологія та Хірургічна Дерматологія у Києві</h1>
                     <p>Професійна діагностика новоутворень шкіри, дерматоскопія, біопсія, Mohs-хірургія та висічення за міжнародними онкологічними протоколами.</p>
                     
-                    <!-- Кнопки для ПК -->
                     <div class="hero-action-group desktop-only">
                         <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
                         <a href="tel:+380939637998" class="btn-secondary">📞 +380939637998</a>
@@ -535,7 +620,6 @@
                 <div class="hero-image">
                     <img src="portrait.jpg" alt="Лікар-онкодерматолог Катерина Разумейко">
                     
-                    <!-- Тільки кнопка Telegram для мобільних поверх фото -->
                     <div class="hero-action-group mobile-only">
                         <a href="https://t.me/katerazum" target="_blank" class="btn-cta">Записатися в Telegram</a>
                     </div>
@@ -682,6 +766,61 @@
                             </div>
                         </div>
 
+                        <div class="timeline-block">
+                            <h3>Сертифікати та дипломи</h3>
+                            <div class="cert-grid">
+                                <a href="cert_1.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №1</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_2.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №2</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_3.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №3</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_4.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №4</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_5.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №5</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_6_compressed_rotated.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №6</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_7_compressed.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №7</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -758,52 +897,21 @@
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section id="faq-view" class="spa-page">
+        <!-- Кейси -->
+        <section id="cases-view" class="spa-page">
             <div class="container section">
-                <h1 class="section-title">Часті питання (FAQ)</h1>
-                <div style="max-width: 900px; margin: 0 auto;">
-
-                    <div class="faq-item">
-                        <h3>Чи можна видалити родимку одразу під час консультації?</h3>
-                        <p>У багатьох випадках — так! Спочатку лікар проводить огляд новоутворень шкіри та визначає, чи можна видаляти утворення та підбирає оптимальний метод видалення. Якщо мова йде про звичайну родимку та радіохвильовий метод видалення — процедура відбувається одразу. Якщо необхідні додаткові обстеження або ж інша тактика, це обговорюється з пацієнтом індивідуально та складається план лікування.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи потрібно видаляти всі родимки?</h3>
-                        <p>Ні! Більшість невусів не потребують видалення. Видалення може бути рекомендоване за медичними та естетичними показаннями, на консультації лікар детально оглядає всі новоутворення та дає рекомендації по кожному з них.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Які родимки треба видаляти?</h3>
-                        <p>Для видалення родимок існують медичні та естетичні показання. До медичних показань відноситься хронічне травмування родимки (сюди ж відносяться виступаючі над рівнем шкіри родимки, що натираються одягом) та підозрілі ознаки при дерматоскопії. Естетична сторона питання теж важлива: якщо пацієнту не подобається вигляд родимки, вона заважає та спричиняє дискомфорт — це пряме показання до видалення.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Який найкращий метод видалення?</h3>
-                        <p>Метод видалення обирається індивідуально в залежності від виду, розміру та місця розташування новоутворення, а також особливостей та побажань пацієнта. На консультації лікар пояснює особливості, переваги та недоліки кожного методу для конкретного новоутворення та обирає найоптимальніший варіант з урахуванням всіх факторів.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи відправляється видалений матеріал на гістологію?</h3>
-                        <p>Якщо ми говоримо про родимки, то так, після видалення лікар обов’язково відправляє матеріал на гістологічне дослідження. Саме гістологія дозволяє остаточно підтвердити діагноз, визначити характер новоутворення та оцінити повноту видалення (за потреби).</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Чи залишиться шрам після видалення?</h3>
-                        <p>Будь-яке порушення цілісності шкіри викликає формування рубця. Його вигляд залежить від методу видалення, глибини та місця розташування новоутворення, протікання післяопераційного періоду та індивідуальних особливостей загоєння шкіри пацієнта. Лікар підбирає оптимальний метод, відштовхуючись від медичних та естетичних факторів, а також надає детальні рекомендації по загоєнню післяопераційної рани для отримання максимально естетичного результату.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Коли необхідно терміново показати родимку лікарю?</h3>
-                        <p>Будь-які зміни в ділянці утворення — привід показатися лікарю. Тривожними ознаками є: швидкий ріст, зміна форми та кольору, асиметрія утворення, кровоточивість. Та варто пам’ятати, що на початку в утворенні може не бути жодних змін, видимих неозборним оком. Помітити перші зміни можливо лише за допомогою дерматоскопа, тож не нехтуйте щорічними чек-апами у дерматолога/дерматоонколога.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Що робити, якщо відбулась травма родимки?</h3>
-                        <p>Обробити ранку прозорим антисептиком. Якщо рана кровоточить — притиснути ватним диском або невеликим відрізком бинта на 5-10 хвилин, заклеїти дихаючим гіпоалергенним пластирем та записатись на плановий огляд у дерматоонколога.</p>
-                    </div>
-
+                <h1 class="section-title">Кейси</h1>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem; color: #4a5568;">
+                    Приклади практичної роботи: результати дерматологічного та хірургічного лікування новоутворень шкіри.
+                </p>
+                <div class="services-category-grid">
+                    <div class="case-card"><img src="case_1.JPG" alt="Кейс №1"></div>
+                    <div class="case-card"><img src="case_2.JPG" alt="Кейс №2"></div>
+                    <div class="case-card"><img src="case_3.JPG" alt="Кейс №3"></div>
+                    <div class="case-card"><img src="case_4.JPG" alt="Кейс №4"></div>
+                    <div class="case-card"><img src="case_5.JPG" alt="Кейс №5"></div>
+                    <div class="case-card"><img src="case_6.PNG" alt="Кейс №6"></div>
+                    <div class="case-card"><img src="case_7.PNG" alt="Кейс №7"></div>
                 </div>
             </div>
         </section>
@@ -811,8 +919,61 @@
         <!-- Блог -->
         <section id="blog-view" class="spa-page">
             <div class="container section">
-                <h1 class="section-title">Публікації та Блог</h1>
-                <p style="text-align: center;">Корисні матеріали про самодіагностику, профілактику захворювань шкіри та догляд скоро з'являться тут.</p>
+                <h1 class="section-title">Блог</h1>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem; color: #4a5568;">
+                    Корисні статті та поради про здоров'я шкіри, профілактику та сучасні методи догляду.
+                </p>
+                <div class="services-category-grid">
+                    <div class="service-category-card">
+                        <h3>Як правильно обирати сонцезахисний крем (SPF)</h3>
+                        <p style="color: #4a5568; margin-top: 0.5rem;">Чому захист від ультрафіолету важливий не лише влітку, і на які параметри слід звертати увагу при виборі засобу.</p>
+                    </div>
+                    <div class="service-category-card">
+                        <h3>Що робити при травмі родимки</h3>
+                        <p style="color: #4a5568; margin-top: 0.5rem;">Покроковий алгоритм дій у разі випадкового пошкодження невуса та чому не варто панікувати.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq-view" class="spa-page">
+            <div class="container section">
+                <h1 class="section-title">Часті питання (FAQ)</h1>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <h3>Чи можна видалити родимку одразу під час консультації?</h3>
+                        <p>У багатьох випадках — так! Спочатку лікар проводить огляд новоутворень шкіри та визначає, чи можна видаляти утворення та підбирає оптимальний метод видалення. Якщо мова йде про звичайну родимку та радіохвильовий метод видалення — процедура відбувається одразу. Якщо необхідні додаткові обстеження або ж інша тактика, це обговорюється з пацієнтом індивідуально та складається план лікування.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Чи потрібно видаляти всі родимки?</h3>
+                        <p>Ні! Більшість невусів не потребують видалення. Видалення може бути рекомендоване за медичними та естетичними показаннями, на консультації лікар детально оглядає всі новоутворення та дає рекомендації по кожному з них.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Які родимки треба видаляти?</h3>
+                        <p>Для видалення родимок існують медичні та естетичні показання. До медичних показань відноситься хронічне травмування родимки (сюди ж відносяться виступаючі над рівнем шкіри родимки, що натираються одягом) та підозрілі ознаки при дерматоскопії. Естетична сторона питання теж важлива: якщо пацієнту не подобається вигляд родимки, вона заважає та спричиняє дискомфорт — це пряме показання до видалення.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Який найкращий метод видалення?</h3>
+                        <p>Метод видалення обирається індивідуально в залежності від виду, розміру та місця розташування новоутворення, а також особливостей та побажаня пацієнта. На консультації лікар пояснює особливості, переваги та недоліки кожного методу для конкретного новоутворення та обирає найоптимальніший варіант з урахуванням всіх факторів.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Чи відправляється видалений матеріал на гістологію?</h3>
+                        <p>Якщо ми говоримо про родимки, то так, після видалення лікар обов’язково відправляє матеріал на гістологічне дослідження. Саме гістологія дозволяє остаточно підтвердити діагноз, визначити характер новоутворення та оцінити повноту видалення (за потреби).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Чи залишиться шрам після видалення?</h3>
+                        <p>Будь-яке порушення цілісності шкіри викликає формування рубця. Його вигляд залежить від методу видалення, глибини та місця розташування новоутворення, протікання післяопераційного періоду та індивідуальних особливостей загоєння шкіри пацієнта. Лікар підбирає оптимальний метод, відштовхуючись від медичних та естетичних факторів, а також надає детальні рекомендації по загоєнню післяопераційної рани для отримання максимально естетичного результату.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Коли необхідно терміново показати родимку лікарю?</h3>
+                        <p>Будь-які зміни в ділянці утворення — привід показатися лікарю. Тривожними ознаками є: швидкий ріст, зміна форми та кольору, асиметрія утворення, кровоточивість. Та варто пам’ятати, що на початку в утворенні може не бути жодних змін, видимих неозборним оком. Помітити перші зміни можливо лише за допомогою дерматоскопа, тож не нехтуйте щорічними чек-апами у дерматолога/дерматоонколога.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Що робити, якщо відбулась травма родимки?</h3>
+                        <p>Обробити ранку прозорим антисептиком. Якщо рана кровоточить — притиснути ватним диском або невеликим відрізком бинта на 5-10 хвилин, заклеїти дихаючим гіпоалергенним пластирем та записатись на плановий огляд у дерматоонколога.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -863,8 +1024,9 @@
             '/': 'home-view',
             '/about': 'about-view',
             '/services': 'services-view',
-            '/faq': 'faq-view',
+            '/cases': 'cases-view',
             '/blog': 'blog-view',
+            '/faq': 'faq-view',
             '/contacts': 'contacts-view'
         };
 
@@ -873,12 +1035,14 @@
 
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('open');
+            menuToggle.classList.toggle('open'); // Перемикаємо стан бургер/хрестик
         });
 
         function navigate(path) {
             window.history.pushState({}, "", path);
             renderPage(path);
             navMenu.classList.remove('open');
+            menuToggle.classList.remove('open'); // Закриваємо хрестик при переході на сторінку
         }
 
         function renderPage(path) {
