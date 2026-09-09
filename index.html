@@ -925,7 +925,7 @@
             navMenu.classList.toggle('open');
         });
 
-        >function navigate(path) {
+        function navigate(path) {
             window.history.pushState({}, "", path);
             renderPage(path);
             navMenu.classList.remove('open');
