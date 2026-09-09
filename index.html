@@ -289,6 +289,26 @@
             box-shadow: var(--shadow);
         }
 
+        /* Стилі для кейсів без обрізання */
+        .case-card {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .case-card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
+        }
+
         .contact-card-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -764,46 +784,32 @@
                 </p>
                 <div class="services-category-grid">
                     
-                    <div class="service-category-card">
-                        <h3>Кейс №1</h3>
-                        <img src="case_1.JPG" alt="Кейс №1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №1 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_1.JPG" alt="Кейс №1">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №2</h3>
-                        <img src="case_2.JPG" alt="Кейс №2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №2 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_2.JPG" alt="Кейс №2">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №3</h3>
-                        <img src="case_3.JPG" alt="Кейс №3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №3 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_3.JPG" alt="Кейс №3">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №4</h3>
-                        <img src="case_4.JPG" alt="Кейс №4" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №4 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_4.JPG" alt="Кейс №4">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №5</h3>
-                        <img src="case_5.JPG" alt="Кейс №5" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №5 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_5.JPG" alt="Кейс №5">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №6</h3>
-                        <img src="case_6.PNG" alt="Кейс №6" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №6 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_6.PNG" alt="Кейс №6">
                     </div>
 
-                    <div class="service-category-card">
-                        <h3>Кейс №7</h3>
-                        <img src="case_7.PNG" alt="Кейс №7" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <p style="font-size: 0.95rem; color: #4a5568;">Клінічний випадок №7 з практики лікаря.</p>
+                    <div class="case-card">
+                        <img src="case_7.PNG" alt="Кейс №7">
                     </div>
 
                 </div>
@@ -919,7 +925,7 @@
             navMenu.classList.toggle('open');
         });
 
-        function navigate(path) {
+        >function navigate(path) {
             window.history.pushState({}, "", path);
             renderPage(path);
             navMenu.classList.remove('open');
