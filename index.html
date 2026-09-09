@@ -308,6 +308,38 @@
             display: block;
         }
 
+        /* Стилі для карток сертифікатів (PDF) */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .cert-icon {
+            font-size: 1.8rem;
+        }
+
         .contact-card-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -697,6 +729,62 @@
                             </div>
                         </div>
 
+                        <!-- Блок сертифікатів та дипломів (у самому кінці секції) -->
+                        <div class="timeline-block">
+                            <h3>Сертифікати та дипломи</h3>
+                            <div class="cert-grid">
+                                <a href="cert_1.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №1</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_2.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №2</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_3.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №3</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_4.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №4</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_5.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №5</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_6_compressed_rotated.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №6</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                                <a href="cert_7_compressed.pdf" target="_blank" class="cert-card">
+                                    <span class="cert-icon">📄</span>
+                                    <div>
+                                        <strong>Сертифікат №7</strong>
+                                        <div style="font-size: 0.85rem; color: #718096;">Переглянути PDF</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -857,7 +945,7 @@
 
                     <div class="faq-item">
                         <h3>Який найкращий метод видалення?</h3>
-                        <p>Метод видалення обирається індивідуально в залежності від виду, розміру та місця розташування новоутворення, а також особливостей та побажань пацієнта. На консультації лікар пояснює особливості, переваги та недоліки кожного методу для конкретного новоутворення та обирає найоптимальніший варіант з урахуванням всіх факторів.</p>
+                        <p>Метод видалення обирається індивідуально в залежності від виду, розміру та місця розташування новоутворення, а також особливостей та побажаня пацієнта. На консультації лікар пояснює особливості, переваги та недоліки кожного методу для конкретного новоутворення та обирає найоптимальніший варіант з урахуванням всіх факторів.</p>
                     </div>
 
                     <div class="faq-item">
