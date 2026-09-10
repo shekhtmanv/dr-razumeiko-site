@@ -1110,10 +1110,18 @@
 
     <script>
         const redirectedPath = sessionStorage.getItem('redirectPath');
-    if (redirectedPath) {
-        sessionStorage.removeItem('redirectPath');
-        window.history.replaceState(null, '', redirectedPath);
-    }
+        let initialPath = window.location.pathname;
+        
+        if (redirectedPath) {
+            sessionStorage.removeItem('redirectPath');
+            window.history.replaceState(null, '', redirectedPath);
+            initialPath = redirectedPath;
+        }
+
+        // Нормалізація шляху (видалення зайвого слешу на кінці, якщо він є)
+        if (initialPath.length > 1 && initialPath.endsWith('/')) {
+            initialPath = initialPath.slice(0, -1);
+        }
         
         const routes = {
             '/': 'home-view',
@@ -1134,8 +1142,12 @@
         });
 
         function navigate(path) {
-            window.history.pushState({}, "", path);
-            renderPage(path);
+            let cleanPath = path;
+            if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
+                cleanPath = cleanPath.slice(0, -1);
+            }
+            window.history.pushState({}, "", cleanPath);
+            renderPage(cleanPath);
             navMenu.classList.remove('open');
             menuToggle.classList.remove('open');
         }
@@ -1240,14 +1252,18 @@
         }
 
         function renderPage(path) {
-            const viewId = routes[path] || 'home-view';
+            let cleanPath = path;
+            if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
+                cleanPath = cleanPath.slice(0, -1);
+            }
+            const viewId = routes[cleanPath] || 'home-view';
             document.querySelectorAll('.spa-page').forEach(page => {
                 page.classList.remove('active');
             });
             const activePage = document.getElementById(viewId);
             if (activePage) {
                 activePage.classList.add('active');
-                if (path === '/blog') {
+                if (cleanPath === '/blog') {
                     renderBlogHome();
                 }
             }
@@ -1263,10 +1279,14 @@
         });
 
         window.addEventListener("popstate", () => {
-            renderPage(window.location.pathname);
+            let path = window.location.pathname;
+            if (path.length > 1 && path.endsWith('/')) {
+                path = path.slice(0, -1);
+            }
+            renderPage(path);
         });
 
-        renderPage(window.location.pathname);
+        renderPage(initialPath);
     </script>
 </body>
 </html>
