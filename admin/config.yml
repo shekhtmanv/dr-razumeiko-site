@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: shekhtmanv/dr-razumeiko-site
   branch: main
+  base_url: https://api.netlify.com
+  client_id: Ov23ctzInYqqmFUF4a1V
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
