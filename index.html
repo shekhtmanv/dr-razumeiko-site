@@ -270,7 +270,6 @@
             gap: 1.8rem;
         }
 
-        /* Змінено відображення блогу у вертикальний список (як FAQ) */
         #blog-posts-container {
             display: flex;
             flex-direction: column;
@@ -479,7 +478,7 @@
             display: block;
         }
 
-        /* Стилі для адаптивності вмісту відкритої статті блогу */
+        /* Виправлені та розділені стилі вмісту статті блогу */
         .blog-article-container {
             max-width: 900px;
             margin: 0 auto;
@@ -492,14 +491,23 @@
             word-break: break-word;
         }
 
-        .blog-article-container img, 
-        .blog-article-container iframe, 
-        .blog-article-container video {
+        .blog-article-container img {
             max-width: 100% !important;
             height: auto !important;
             display: block;
             margin: 1.5rem auto;
             border-radius: 12px;
+        }
+
+        .blog-article-container iframe, 
+        .blog-article-container video {
+            width: 100% !important;
+            aspect-ratio: 16 / 9;
+            height: auto !important;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 12px;
+            border: none;
         }
 
         footer {
@@ -1086,7 +1094,6 @@
             menuToggle.classList.remove('open');
         }
 
-        // Функція для розбору фронтматтеру Markdown файлів з адмінки
         function parseFrontmatter(text) {
             const match = text.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
             if (!match) return { metadata: {}, body: text };
@@ -1107,7 +1114,6 @@
             return { metadata, body };
         }
 
-        // Динамічне завантаження блогу з GitHub репозиторію
         async function loadBlogPosts() {
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
@@ -1156,7 +1162,6 @@
             }
         }
 
-        // Рендеринг окремої статті з виправленою адаптивністю (запобігання виходу за межі екрану)
         function renderSinglePost(metadata, body) {
             const container = document.getElementById('blog-content-area');
             container.innerHTML = `
