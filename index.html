@@ -1109,6 +1109,12 @@
     </footer>
 
     <script>
+        const redirectedPath = sessionStorage.getItem('redirectPath');
+    if (redirectedPath) {
+        sessionStorage.removeItem('redirectPath');
+        window.history.replaceState(null, '', redirectedPath);
+    }
+        
         const routes = {
             '/': 'home-view',
             '/about': 'about-view',
