@@ -2,7 +2,6 @@ backend:
   name: github
   repo: shekhtmanv/dr-razumeiko-site
   branch: main
-  client_id: 0v23ctzinYqqmFUF4a1V
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
