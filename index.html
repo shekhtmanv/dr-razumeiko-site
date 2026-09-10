@@ -54,6 +54,7 @@
             line-height: 1.6;
             background-color: #fff;
             padding-bottom: 0;
+            overflow-x: hidden;
         }
 
         header {
@@ -269,6 +270,19 @@
             gap: 1.8rem;
         }
 
+        /* Змінено відображення блогу у вертикальний список (як FAQ) */
+        #blog-posts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #blog-posts-container .service-category-card {
+            width: 100%;
+        }
+
         .service-category-card {
             background: var(--white);
             padding: 1.8rem;
@@ -465,6 +479,29 @@
             display: block;
         }
 
+        /* Стилі для адаптивності вмісту відкритої статті блогу */
+        .blog-article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .blog-article-container img, 
+        .blog-article-container iframe, 
+        .blog-article-container video {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 12px;
+        }
+
         footer {
             background: var(--primary-color);
             color: var(--white);
@@ -576,6 +613,10 @@
 
             .section-title {
                 font-size: 1.6rem;
+            }
+
+            .blog-article-container {
+                padding: 1.2rem;
             }
         }
     </style>
@@ -929,7 +970,7 @@
                     <p style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem; color: #4a5568;">
                         Корисні статті та поради про здоров'я шкіри, профілактику та сучасні методи догляду.
                     </p>
-                    <div id="blog-posts-container" class="services-category-grid">
+                    <div id="blog-posts-container">
                         <!-- Динамічно завантажується з адмінки GitHub репозиторію -->
                     </div>
                 </div>
@@ -1071,7 +1112,7 @@
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
 
-            container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #718096;">Завантаження статей з адмін-панелі...</p>';
+            container.innerHTML = '<p style="text-align: center; color: #718096;">Завантаження статей з адмін-панелі...</p>';
 
             try {
                 const response = await fetch('https://api.github.com/repos/shekhtmanv/dr-razumeiko-site/contents/blog');
@@ -1083,7 +1124,7 @@
                 const markdownFiles = files.filter(file => file.name.endsWith('.md'));
 
                 if (markdownFiles.length === 0) {
-                    container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #718096; padding: 2rem 0;">Поки що немає опублікованих статей в адмінці.</p>';
+                    container.innerHTML = '<p style="text-align: center; color: #718096; padding: 2rem 0;">Поки що немає опублікованих статей в адмінці.</p>';
                     return;
                 }
 
@@ -1111,21 +1152,23 @@
                 }
             } catch (error) {
                 console.error(error);
-                container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #e53e3e; padding: 2rem 0;">Поки що немає опублікованих статей в адмінці.</p>';
+                container.innerHTML = '<p style="text-align: center; color: #e53e3e; padding: 2rem 0;">Поки що немає опублікованих статей в адмінці.</p>';
             }
         }
 
-        // Рендеринг окремої статті
+        // Рендеринг окремої статті з виправленою адаптивністю (запобігання виходу за межі екрану)
         function renderSinglePost(metadata, body) {
             const container = document.getElementById('blog-content-area');
             container.innerHTML = `
-                <button id="back-to-blog" class="btn-secondary" style="margin-bottom: 1.5rem; cursor: pointer;">← Назад до блогу</button>
-                <article style="background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
-                    <div style="font-size: 0.9rem; color: var(--accent-color); margin-bottom: 0.5rem; font-weight: 600;">${metadata.date ? new Date(metadata.date).toLocaleDateString('uk-UA') : ''}</div>
-                    <h1 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 2rem;">${metadata.title}</h1>
-                    ${metadata.thumbnail ? `<img src="${metadata.thumbnail}" alt="${metadata.title}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;">` : ''}
-                    <div style="color: var(--text-color); line-height: 1.8; white-space: pre-wrap;">${body}</div>
-                </article>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <button id="back-to-blog" class="btn-secondary" style="margin-bottom: 1.5rem; cursor: pointer;">← Назад до блогу</button>
+                    <article class="blog-article-container">
+                        <div style="font-size: 0.9rem; color: var(--accent-color); margin-bottom: 0.5rem; font-weight: 600;">${metadata.date ? new Date(metadata.date).toLocaleDateString('uk-UA') : ''}</div>
+                        <h1 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 2rem; line-height: 1.3;">${metadata.title}</h1>
+                        ${metadata.thumbnail ? `<img src="${metadata.thumbnail}" alt="${metadata.title}" style="max-height: 450px; object-fit: cover;">` : ''}
+                        <div style="color: var(--text-color); line-height: 1.8; white-space: pre-wrap;">${body}</div>
+                    </article>
+                </div>
             `;
 
             document.getElementById('back-to-blog').addEventListener('click', () => {
@@ -1140,7 +1183,7 @@
                 <p style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem; color: #4a5568;">
                     Корисні статті та поради про здоров'я шкіри, профілактику та сучасні методи догляду.
                 </p>
-                <div id="blog-posts-container" class="services-category-grid"></div>
+                <div id="blog-posts-container"></div>
             `;
             loadBlogPosts();
         }
