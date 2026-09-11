@@ -10,8 +10,8 @@
     <!-- Канонічна адреса -->
     <link rel="canonical" href="https://dr-razumeiko.com">
 
-    <!-- Фірмовий фавікон (лаконічна літера R з медичним елементом) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a5f7a'/%3E%3Crect x='15' y='8' width='2' height='16' fill='%23ffffff' opacity='0.25'/%3E%3Crect x='8' y='15' width='16' height='2' fill='%23ffffff' opacity='0.25'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='800' fill='%23ffffff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+    <!-- Виправлений контрастний фавікон з медичним хрестом -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2c59'/%3E%3Crect x='13' y='7' width='6' height='18' rx='1' fill='%23e63946'/%3E%3Crect x='7' y='13' width='18' height='6' rx='1' fill='%23e63946'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='18' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
     <!-- Open Graph / Соцмережі -->
     <meta property="og:title" content="Катерина Разумейко | Онкодерматолог, Дерматохірург">
@@ -366,7 +366,6 @@
             top: -2px;
         }
 
-        /* Адаптивні стилі для висоти картинок та відео у блозі (мобільні vs десктоп) */
         .blog-media-box {
             width: 100%;
             height: 180px;
@@ -388,7 +387,7 @@
         @media (min-width: 851px) {
             .blog-media-box,
             .blog-media-wrapper {
-                height: 320px; /* збільшена висота для веб/десктоп версії */
+                height: 320px;
             }
         }
 
@@ -544,7 +543,6 @@
             display: block;
         }
 
-        /* Стилі вмісту статті блогу */
         .blog-article-container {
             max-width: 900px;
             margin: 0 auto;
@@ -1144,7 +1142,6 @@
             initialPath = redirectedPath;
         }
 
-        // Нормалізація шляху (видалення зайвого слешу на кінці, якщо він є)
         if (initialPath.length > 1 && initialPath.endsWith('/')) {
             initialPath = initialPath.slice(0, -1);
         }
@@ -1229,7 +1226,6 @@
                     if (metadata.thumbnail) {
                         mediaHtml = `<img src="${metadata.thumbnail}" alt="${metadata.title || ''}" class="blog-media-box">`;
                     } else {
-                        // Шукаємо вставлене відео або iframe в тілі статті для відображення на плитці
                         const videoMatch = body.match(/<(iframe|video)[^>]*>[\s\S]*?<\/\1>/i) || body.match(/<(iframe|video)[^>]*\/?>/i);
                         if (videoMatch) {
                             let extractedVideo = videoMatch[0]
