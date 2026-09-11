@@ -1199,10 +1199,24 @@
                     const fileText = await fileRes.text();
                     const { metadata, body } = parseFrontmatter(fileText);
 
+                    let mediaHtml = '';
+                    if (metadata.thumbnail) {
+                        mediaHtml = `<img src="${metadata.thumbnail}" alt="${metadata.title || ''}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">`;
+                    } else {
+                        // Шукаємо вставлене відео або iframe в тілі статті для відображення на плитці
+                        const videoMatch = body.match(/<(iframe|video)[^>]*>[\s\S]*?<\/\1>/i) || body.match(/<(iframe|video)[^>]*\/?>/i);
+                        if (videoMatch) {
+                            let extractedVideo = videoMatch[0]
+                                .replace(/width="[^"]*"/gi, 'width="100%"')
+                                .replace(/height="[^"]*"/gi, 'height="100%"');
+                            mediaHtml = `<div style="width: 100%; height: 180px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; position: relative; background: #000;"><div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">${extractedVideo}</div></div>`;
+                        }
+                    }
+
                     const card = document.createElement('div');
                     card.className = 'service-category-card';
                     card.innerHTML = `
-                        ${metadata.thumbnail ? `<img src="${metadata.thumbnail}" alt="${metadata.title || ''}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">` : ''}
+                        ${mediaHtml}
                         <div style="font-size: 0.85rem; color: var(--accent-color); margin-bottom: 0.4rem; font-weight: 600;">${metadata.date ? new Date(metadata.date).toLocaleDateString('uk-UA') : ''}</div>
                         <h3>${metadata.title || 'Без назви'}</h3>
                         <p style="color: #4a5568; margin-top: 0.5rem;">${metadata.description || ''}</p>
